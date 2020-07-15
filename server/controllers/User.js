@@ -7,25 +7,26 @@ const bcrypt = require('bcryptjs');
 router.get('/init', async (req, res) => {
     const token = req.query.token;
     let response;
-    let userId = null;
+    let user = null;
 
     try {
-        const userData = jwt.verify(token, secretOrPrivateKey:'app');
+        const userData = jwt.verify(token, 'app');
         userId = userData.userId;
+        user = await User.findById(userData.userId);
     } catch (e) {
         response = null;
     }
 
-    if (userId) {
-        response = await User.findById(userId);
+    if (user) {
+        response = user;
     }
-    res.send(data:{user: response});
+    res.send({user: response});
 });
 
 router.post('/register', async (req, res) => {
     const userExists = await User.find({email: req.body.email});
     if (!userExists) {
-        return res.status(400).send(data:{
+        return res.status(400).send({
             message: 'A user with this email does already exists'
         });
     }
@@ -39,27 +40,27 @@ router.post('/register', async (req, res) => {
 
     await newUser.save();
 
-    return res.sendStatus(statusCode:201);
+    return res.sendStatus(201);
 });
 
 router.post('/login', async (req, res) => {
     const user = await User.find({email: req.body.email});
     if (!user) {
-        return res.status(400).send(data:{
+        return res.status(400).send({
             message: 'User with this email does not exist'
         });
     }
 
     const passwordIsEqual = await bcrypt.compare(req.body.password, user.password);
     if(!passwordIsEqual) {
-        return res.status(401).send(data:{
+        return res.status(401).send({
             message: 'Password was incorrect'
         })
     }
 
-    const token = jwt.sign(payload{userId: user._id}, secretOrPrivateKey:'app');
+    const token = jwt.sign({userId: user._id}, 'app');
 
-    res.send(data:{
+    res.send({
         user,
         token
     })
