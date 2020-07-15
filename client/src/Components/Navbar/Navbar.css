@@ -10,5 +10,78 @@
 }
 
 .navbar-logo {
-    height: 40px;
+    height: 60px;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-item {
+    margin-right: 1rem;
+}
+
+.navbar-item:last-child {
+    margin-right: 0;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: all 0.6s;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-link:hover {
+    color: dodgerblue;
+}
+
+.navbar-link:active {
+    color: dodgerblue;
+}
+
+.navbar-submenu-container {
+    position: relative;
+}
+
+.navbar-submenu-container:hover .navbar-submenu {
+    display: block;
+}
+
+.navbar-submenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 300px;
+    z-index: 99;
+    background-color: dodgerblue;
+    list-style: none;
+}
+
+.navbar-submenu-item {
+    padding: 0.5rem;
+    transition: all 0.6s;
+    text-align: center;  
+}
+
+.navbar-submenu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem;
+}
+
+.navbar-submenu-item:hover {
+    background-color: gold;
+}
+
+.navbar-submenu-item:hover .navbar-submenu-link {
+    color: black;
+    transition: all 0.6s;
 }
