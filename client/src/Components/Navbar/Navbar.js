@@ -13,7 +13,7 @@ export default function () {
                     <Link to="/" className="navbar-link">Home</Link>
                 </li>
                 <li className="navbar-item navbar-submenu-container">
-                    <div className="navbar-link">Account</div>
+                    <div className="navbar-link">Login / Register</div>
                     <ul className="navbar-submenu">
                         <li className="navbar-submenu-item">
                             <Link to="/auth/login" className="navbar-submenu-link">Login</Link>
