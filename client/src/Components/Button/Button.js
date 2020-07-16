@@ -1,10 +1,10 @@
 import React from "react";
-import "./Button.css"
+import "./Button.css";
 
-export default function ({children}) {
+export default function ({children, type}) {
     return (
-        <div className="btn">
+        <button className="btn" type={type}>
             {children}
-        </div>
+        </button>
     )
 }

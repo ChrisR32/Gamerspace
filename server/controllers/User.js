@@ -24,8 +24,9 @@ router.get('/init', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const userExists = await User.find({email: req.body.email});
-    if (!userExists) {
+    const user = await User.find({email: req.body.email});
+    console.log(user);
+    if (user._id) {
         return res.status(400).send({
             message: 'A user with this email does already exists'
         });
