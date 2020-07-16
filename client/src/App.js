@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import AuthContext from "./Contexts/AuthContext";
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import axios from "axios";
-import AppContext from './Contexts/AppContext';
-import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar";
 
-import Home from "./Pages/Home/Home";
-import "./Components/Page/Page.css";
-import "./Components/Form/Form.css";
-import Register from './Pages/Register/Register';
+import Home from "./Pages/Home";
+import Login from "./Pages/Auth/Login";
+import Register from "./Pages/Auth/Register";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,28 +18,39 @@ function App() {
 
   const init = async () => {
     const token = localStorage.getItem("token");
-    const {data} = await axios.get('api/user/init?token='+token);
-    setUser(data.user);
+    const response = await axios.get('/api/auth/init', {params: {token}});
+    const {user} = response.data;
+    setUser(user);
     setIsInitiated(true);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.setItem("token", null);
   };
 
   return (
     <div>
-      <AppContext.Provider value={{user, setUser}}>
-      <Router>
+      {isInitiated && (
+          <AuthContext.Provider value={{user, setUser, handleLogout}}>
+            <Router>
               <Navbar />
               <Switch>
                 <Route path="/" exact>
                   <Home/>
+                </Route>
+                <Route path="/auth/login">
+                  {!user ? <Login/> : <Redirect to="/"/>}
                 </Route>
                 <Route path="/auth/register">
                   {!user ? <Register/> : <Redirect to="/"/>}
                 </Route>
               </Switch>
             </Router>
-      </AppContext.Provider>
+          </AuthContext.Provider>
+      )}
     </div>
   );
-  }
+}
 
 export default App;

@@ -1,25 +1,28 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const path = require("path");
-require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_KEY, {
+const config = require('./config');
+
+mongoose.connect(config.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
-
-mongoose.connection.on( 'connected', () => console.log('MongoDB is Connected'));
+mongoose.connection.on('connected', () => console.log('Connected to MongoDB'));
 
 const app = express();
-app.use(bodyParser.json);
+app.use(bodyParser.json());
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, "..", "client/build")));
 
-app.use('/api/user', require('./controllers/User'));
+app.use('/api/auth', require("./controllers/Auth"));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "..", "client/build/index.html"));
-})
+});
 
-app.listen(5000, () => console.log('Server started on port 5000'));
+const PORT = 5005;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

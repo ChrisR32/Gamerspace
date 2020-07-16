@@ -6,20 +6,16 @@ const UserSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    createdAt: {
-        default: Date.now(),
-        type: Date
-    },
-    role: String,
+    createdAt: Date
 });
 
-UserSchema.pre('save', async function (next) {
-    const user = this;
-    if (!user.isModified('password')) return next();
+UserSchema.pre('save', async function(next) {
+   const user = this;
+   if (!user.isModified('password')) return next();
 
-    const hash = await bcrypt.hash(user.password, 10);
-    user.password = hash;
-    next();
+   const hash = await bcrypt.hash(user.password, 10);
+   user.password = hash;
+   next();
 });
 
 const User = mongoose.model('User', UserSchema);
