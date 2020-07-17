@@ -7,6 +7,8 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
+import CreateForum from "./Pages/Forum/CreateForum";
+import ShowForum from "./Pages/Forum/ShowForum";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -44,6 +46,12 @@ function App() {
                 </Route>
                 <Route path="/auth/register">
                   {!user ? <Register/> : <Redirect to="/"/>}
+                </Route>
+                <Route path="/forum/create/:id">
+                  {user ? <CreateForum/> : <Redirect to="/auth/login"/>}
+                </Route>
+                <Route path="/forum/:id">
+                <ShowForum/>
                 </Route>
               </Switch>
             </Router>
