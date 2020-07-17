@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
-
 export default function ShowForum() {
     const history = useHistory();
     const {id} = useParams();
@@ -26,15 +25,15 @@ export default function ShowForum() {
 
 
     return (
-        <div style={{padding: "2rem"}}>
+        <div>
 
-            {forum && <h1>{forum.title}</h1>}
+            {forum && <h3>Forum > GET CATEGORY > {forum.title} ></h3>}
 
-            <button className={"btn btn-submit"} onClick={() => history.push("/thread/create/"+id)}>Create Thread</button>
+            <button onClick={() => history.push("/thread/create/"+id)}>Create Thread</button>
             <ul>
                 {threads.map((thread, index) => (
-                    <li button onClick={() => history.push(`/thread/${thread._id}`)}>
-                        <h3>{thread.title}</h3>
+                    <li key={index} button onClick={() => history.push(`/thread/${thread._id}`)}>
+                        <h4>{thread.title}</h4>
                         <p>{thread.createdAt}</p>
                     </li>
                 ))}

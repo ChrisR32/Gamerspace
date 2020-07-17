@@ -19,6 +19,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "client/build")));
 
 app.use('/api/auth', require("./controllers/Auth"));
+app.use('/api/category', require("./controllers/Category"));
 app.use('/api/forum', require("./controllers/Forum"));
 
 app.get('*', (req, res) => {

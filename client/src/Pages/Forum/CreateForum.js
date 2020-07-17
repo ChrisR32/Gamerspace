@@ -21,11 +21,15 @@ const CreateForum = () => {
     };
 
     return (
-        <div style={{padding: "2rem"}}>
-            <h1 style={{marginBottom: "2rem"}}>Create Forum</h1>
+        <div class="adminOnly">
+            <h5>Create Sub Category - ADMINISTRATORS ONLY</h5>
+
             <form onSubmit={handleOnSubmit}>
-                <input type={"text"} name={"title"} id={title} style={{width: "80%"}} onChange={e => setTitle(e.target.value)}></input>
-                <input type={"submit"} className={"btn btn-block"}>Create</input>
+                <input label="title"
+                        value={title}
+                        onChange={e => setTitle(e.target.value)}
+                />
+                <button type="submit">Create</button>
             </form>
         </div>
     )
