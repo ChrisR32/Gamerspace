@@ -3,6 +3,9 @@ import AuthContext from "./Contexts/AuthContext";
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/footer";
+import './scss/app.scss';
+
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
@@ -12,6 +15,8 @@ import BrowseCategories from "./Pages/Category/BrowseCategories";
 import ShowCategory from "./Pages/Category/ShowCategory";
 import CreateForum from "./Pages/Forum/CreateForum";
 import ShowForum from "./Pages/Forum/ShowForum";
+import CreateThread from "./Pages/Thread/CreateThread";
+import ShowThread from "./Pages/Thread/ShowThread";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -65,7 +70,14 @@ function App() {
                 <Route path="/forum/:id">
                 <ShowForum/>
                 </Route>
+                <Route path="/thread/create/:id">
+                  {user ? <CreateThread/> : <Redirect to="/auth/login"/>}
+                </Route>
+                <Route path="/thread/:id">
+                  <ShowThread/>
+                </Route>
               </Switch>
+              <Footer />
             </Router>
           </AuthContext.Provider>
       )}

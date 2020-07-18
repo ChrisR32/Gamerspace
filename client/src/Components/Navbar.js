@@ -1,8 +1,9 @@
 import React, {useContext} from 'react';
 import AuthContext from "../Contexts/AuthContext";
 import {useHistory} from "react-router-dom";
-import Logo from "../Images/logo2.png";
-import "./Navbar.css";
+import Logo from "../Images/login4.png";
+import "./Navbar.scss";
+import 'bootstrap';
 
 export default function MenuAppBar() {
     const history = useHistory();
@@ -34,32 +35,141 @@ export default function MenuAppBar() {
     };
 
     return (
-        <div className="navbar">
-        <img src={Logo} className="navbar-logo" alt="Gamerspace Logo"/>
+<div className="page-header js-page-header">
+    <div className="metabar bg-gradient">
 
-        <div className="navbar-list">
-            <div className="navbar-item">
-                <div className="navbar-div">Home</div>
-            </div>
-            <div className="navbar-item navbar-submenu-container">
-                <div className="navbar-div">Login / Register</div>
-                <div className="navbar-submenu">
-                    <div className="navbar-submenu-item">
-                        <div onClick={handleLogin} className="navbar-submenu-div">Login</div>
-                    </div>
-                    <div className="navbar-submenu-item">
-                        <div onClick={handleRegister} className="navbar-submenu-div">Register</div>
-                    </div>
-                    <div className="navbar-submenu-item">
-                        <div onClick={logout} className="navbar-submenu-div">Logout</div>
-                    </div>
+
+    
+
+<div className="navbar-expand-lg navbar--header p-0 js-header d-flex flex-wrap align-items-center justify-content-between">
+    
+    <div className="container d-flex flex-wrap align-items-center justify-content-between">
+
+            <img src={Logo} className="navbar-logo" alt="Gamerspace Logo"/>
+
+
+
+        <div className="d-flex h-100">
+            <div className="nav-sidebar" id="globalNavbar">
+
+                <button className="navbar-toggler navbar-toggler--bar" aria-controls="globalNavbar" aria-label="Toggle navigation">
+                    <i className="icon icon-close"></i>
+                </button>
+
+                
+<ul className="navbar-nav ml-lg-auto">
+    
+        
+            <li className="nav-item  ">
+                <a className="nav-link " href="/" target="">
+                    Home
+                    
+                </a>
+
+                            </li>
+
+        
+    
+        
+    
+        
+            <li className="nav-item  ">
+                <a className="nav-link " href="/category/" target="">
+                    Forum
+                    
+                </a>
+
+                            </li>
+
+        
+    
+        
+    
+        
+            <li className="nav-item ">
+                <a className="nav-link " href="/" target="">
+                    Contact
+                    
+                </a>
+
+                            </li>
+
+        
+    
+        
+            <li className="nav-item  dropdown">
+                <a className="nav-link dropdown-toggle" id="navbarDropdown-0000000000bd21cd000000004e22ffb4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                    Account
+                    
+                </a>
+
+                
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown-0000000000bd21cd000000004e22ffb4">
+                                                
+                            
+                            <a className="dropdown-item" onClick={handleLogin}>
+                                Login
+                            </a>
+
+                            
+                        
+                            
+                                <div className="dropdown-divider"></div>
+
+                            
+                            <a className="dropdown-item" onClick={handleRegister}>
+                                Register
+                            </a>
+
+                            <div className="dropdown-divider"></div>
+                            <a className="dropdown-item" onClick={handleRegister}>
+                                Profile
+                            </a>
+
+                            <div className="dropdown-divider"></div>
+    
+
+                            
+<a className="dropdown-item" onClick={logout}>
+    Logout
+</a>
+
+
                 </div>
+                            </li>
+
+        
+    
+        
+    
+        
+ 
+
+        
+    
+        
+    </ul>
+
+
+               
             </div>
-            <div className="navbar-item last-child">
-                <div className="navbar-div">Search</div>
-            </div>
-            
+
+
+
+
+              
+
         </div>
+
     </div>
+
+</div>
+
+</div>
+
+
+</div>
+
     );
 }
+

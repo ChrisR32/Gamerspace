@@ -2,44 +2,11 @@ import React, {useState} from 'react';
 import validator from "validator";
 import axios from "axios";
 import AuthContext from "../../Contexts/AuthContext";
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import TitleImg from "../../Images/register3.png";
-import "./Auth.css";
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
+import "./Auth.scss";
+import "./auth.css";
+import 'bootstrap';
 
 export default function Register() {
-    const classes = useStyles();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -84,60 +51,59 @@ export default function Register() {
     };
 
     return (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <div className={classes.paper}>
-                <Typography component="h1" variant="h5">
-                <img src={TitleImg} className="title-logo" alt="Gamerspace Logo"/>
-                </Typography>
-                <form className={classes.form} onSubmit={handleOnSubmit}>
-                    <TextField
-                        required
-                        fullWidth
-                        label="Name"
-                        autoFocus
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                    />
-                    <TextField
-                        required
-                        fullWidth
-                        label="Email Address"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        error={!!emailError}
-                        helperText={emailError}
-                    />
-                    <TextField
-                        required
-                        fullWidth
-                        label="Password"
+        <div className="top-div login-bottom">        
+        <h1>register</h1>
+                <form className="login-forum" onSubmit={handleOnSubmit}>
+                        <div className="form-group">
+                            <label for="name-input">User Name</label>
+                            <input className="form-control form-control-lg"
+                                itemID="name-input"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </div>
+                    <div className="form-group">
+                        <label for="email-input">Email Address</label>
+                            <input className="form-control form-control-lg"
+                                itemID="email-input"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                error={!!emailError}
+                                helperText={emailError}
+                            />
+                    </div>
+                    <div className="form-group">
+                        <label for="password-input">Password</label>
+                        <input className="form-control form-control-lg"
+                        itemID="password-input"
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         error={!!passwordError}
                         helperText={passwordError}
                     />
-                    <TextField
-                        required
-                        fullWidth
-                        label="Password Confirmation"
-                        type="password"
-                        value={passwordConfirmation}
-                        onChange={e => setPasswordConfirmation(e.target.value)}
-                    />
-                    <Button
+                    </div>
+                    <div className="form-group">
+                    <label for="password-again-input">Confirm Password</label>
+                        <input className="form-control form-control-lg"
+                            itemID="password-again-input"
+                            type="password"
+                            value={passwordConfirmation}
+                            onChange={e => setPasswordConfirmation(e.target.value)}
+                        />
+                    </div>
+                    <br/>
+                    <div class="wrap">
+                        <button
                         type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        className={classes.submit}
-                    >
-                        Sign In
-                    </Button>
+                        className="submit btn btn-primary btn-lg btn-block"
+                        >
+                        Register
+                    </button>
+                    </div>
                 </form>
             </div>
-        </Container>
+  
+
     );
 }

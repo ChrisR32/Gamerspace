@@ -1,0 +1,128 @@
+html a {
+color: black;
+transition: all 0.3s;
+}
+
+html a:hover {
+    color: rgb(255, 165, 30);
+    }
+
+.navbar--header nav {
+    height: 100%;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+
+.navbar--header {
+    height: 100px;
+    box-shadow: 0 8px 31px -21px rgba(0, 0, 0, 0.33);
+    background: white;
+    pointer-events: auto;
+    transition-duration: .33s;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+}
+
+
+
+.page-header {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    // height: 210px;
+    background-color: whitesmoke;
+    // border-bottom: 0.6px solid rgb(180, 180, 180);
+}
+
+.page-header h1 {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(253, 120, 32);
+    font-size: calc(56rem/16);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    padding-top: 16px;
+}
+
+
+a {
+    color: black;
+    font-weight: 700;
+    font-size: calc(21rem/16);
+    letter-spacing: .05rem;
+}
+
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.nav-item {
+    padding-left: 2rem;
+}
+
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+
+
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+
+.navbar-logo {
+    height: 50px;
+}
