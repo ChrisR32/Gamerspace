@@ -3,6 +3,7 @@ import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../../Contexts/AuthContext";
 
+
 export default function ShowThread() {
     const {user} = useContext(AuthContext)
     const [thread, setThread] = useState(null);

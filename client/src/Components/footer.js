@@ -12,12 +12,12 @@ export default function Footer() {
 
         
             <div class="col-12 col-md mb-1 mb-md-0">
-                <a href="#" target="_blank" class="text-uppercase strong">LINK WITH US</a>
+                <a href="#" target="_blank" class="text-uppercase strong">NEWSLETTER</a>
             </div>
 
         
             <div class="col-12 col-md mb-1 mb-md-0">
-                <a href="#" target="_blank" class="text-uppercase strong">LEARN MORE</a>
+                <a href="#" target="_blank" class="text-uppercase strong">FORUM RULES</a>
             </div>
 
         
