@@ -3,7 +3,7 @@ import AuthContext from "../../Contexts/AuthContext";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import "./Auth.scss";
-import "./auth.css";
+import "./Auth.css";
 import 'bootstrap';
 
 

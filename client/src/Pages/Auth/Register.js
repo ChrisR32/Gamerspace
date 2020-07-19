@@ -3,7 +3,7 @@ import validator from "validator";
 import axios from "axios";
 import AuthContext from "../../Contexts/AuthContext";
 import "./Auth.scss";
-import "./auth.css";
+import "./Auth.css";
 import 'bootstrap';
 
 export default function Register() {
