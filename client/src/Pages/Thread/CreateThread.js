@@ -2,6 +2,8 @@ import React, {useState, useContext} from "react";
 import axios from "axios";
 import {useHistory, useParams} from "react-router-dom";
 import AuthContext from "../../Contexts/AuthContext";
+import "../Category/CreateForms.scss";
+import 'bootstrap';
 
 const CreateForum = () => {
     const {user} = useContext(AuthContext);
@@ -26,25 +28,37 @@ const CreateForum = () => {
     };
 
     return (
-        <div>
+        <div className="top-div login-bottom">        
             <h1>Create Thread</h1>
 
-            <form onSubmit={handleOnSubmit}>
-                <h4>Tread Title</h4>
+            <form className="forum" onSubmit={handleOnSubmit}>
+            <div className="form-group">
+            <label for="title-input">Thread Title</label>
+
                 <input label="Title"
                         placeholder="Title"
+                        itemId="title-input"
                         type="text"
                         value={title}
                         onChange={e => setTitle(e.target.value)}/>
-                <h4>Thread Content</h4>
+            </div>
+            <br/>
+
+            <div className="form-group">
+            <label for="content-input">Thread Content</label>
                <textarea placeholder="Content"
                         rows="5"
                         cols="40"
+                        itemId="content-input"
                         value={content}
                         style={{width: "100%", height: 250}}
                         onChange={e => setContent(e.target.value)}>
                </textarea>
-                <button type="submit">Create</button>
+               </div>
+            <br/>
+            <div class="wrap">
+                <button className="submit btn btn-primary btn-lg btn-block" type="submit">Create</button>
+                </div>
             </form>
         </div>
     )

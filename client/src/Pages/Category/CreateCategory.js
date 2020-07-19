@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import "./CreateForms.scss";
+import 'bootstrap';
 
 const CreateCategory = () => {
     const history = useHistory();
@@ -19,12 +21,18 @@ const CreateCategory = () => {
     };
 
     return (
-        <div className={"adminOnly"}>
-            <h1>Create Category - ADMINISTRATORS ONLY</h1>
+        <div className="top-div login-bottom">        
+            <h1>Create Category</h1>
 
-            <form onSubmit={handleOnSubmit}>
-                <input label="Title" value={title} onChange={e => setTitle(e.target.value)}/>
-                <button type="submit">Create</button>
+            <form className="forum" onSubmit={handleOnSubmit}>
+            <div className="form-group">
+            <label for="title-input">Category Title</label>
+                <input label="Title" itemId="title-input" value={title} onChange={e => setTitle(e.target.value)}/>
+            </div>
+            <br/>
+            <div class="wrap">
+                <button className="submit btn btn-primary btn-lg btn-block" type="submit">Create</button>
+            </div>
             </form>
         </div>
     )
