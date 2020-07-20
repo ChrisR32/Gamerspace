@@ -2,6 +2,9 @@ import React, {useState, useEffect, useContext} from "react";
 import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../../Contexts/AuthContext";
+import HomeLogo from "../../Images/home-icon.png";
+import "../Category/CreateForms.scss";
+import 'bootstrap';
 
 
 export default function ShowThread() {
@@ -43,28 +46,64 @@ export default function ShowThread() {
 
     const history = useHistory();
     return (
-        <div>
-
-            {thread && <h3>Forum > GET CATEGORY > GET SUB CATEGORY > {thread.title}</h3>}
-
-            {thread && <p>{thread.content}</p>}
-
-
-            <ul>
-                {posts.map((post, index) => (
-                    <li key={index}>
-                        <h4>{post.content}</h4>
+<div className="top-div login-bottom">   
+    <div className="main-content">
+        {thread && <h3><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum > GET CATEGORY > GET SUB CATEGORY > {thread.title}</h3>}
+        <div className="row top-row">
+            {thread && <div className="col-12 top-cat"><h4><strong>{thread.title}</strong></h4></div>}
+        </div>
+        <div className="row">   
+            <div className="col-12 cat-left">
+                <div className="row">
+                    <div className="col-2">
+                        <p>Profile Pic</p>
+                        <p>UserName</p>
+                        <p>Date</p>
+                    </div> 
+                    <div className="col-10">  
+                        {thread && <p>{thread.content}</p>}
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>         
+       
+         {posts.map((post, index) => (
+ <div className="main-content">
+        <div className="row top-row" key={index}>
+            {thread && <div className="col-12 top-cat"><h4><strong>RE: {thread.title}</strong></h4></div>}
+       </div>
+        <div className="row">
+            <div className="col-12 cat-left">
+                
+                <div className="row" >                          
+                    <div className="col-2">
+                        <p>Profile Pic</p>
+                        <p>UserName</p>
                         <p>{post.createdAt}</p>
-                    </li>
-                ))}
-            </ul>
-
-            <button disabled={!hasMore}>Load More Posts</button>
+                    </div> 
+                    <div className="col-10">  
+                       <p>{post.content}</p>
+                    </div>
+                </div> 
+            </div> 
+        </div>   
+  
+    </div>
+        
+                            ))}   
+              
+  
+        <br/>
+        <div className="main-content right-align">
+            <button disabled={!hasMore} className="btn-pad-right">Load More Posts</button>
 
             <button onClick={() => setIsReplying(true)}>Reply</button>
+            <br/>
+            <br/>
             {isReplying && (
                 <form onSubmit={handleReply}>
-                    <h4>Reply Content</h4>
+                    <h4 className="left-align">Reply Content</h4>
                     <textarea placeholder="Content"
                                rows="5"
                                cols="40"
@@ -74,8 +113,12 @@ export default function ShowThread() {
 
                    <button type="submit">Reply</button>
                 </form>
+              
             )}
+            </div>
+</div>
 
-        </div>
+
+
     )
 }
