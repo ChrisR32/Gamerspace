@@ -17,6 +17,7 @@ import CreateForum from "./Pages/Forum/CreateForum";
 import ShowForum from "./Pages/Forum/ShowForum";
 import CreateThread from "./Pages/Thread/CreateThread";
 import ShowThread from "./Pages/Thread/ShowThread";
+import CreatePost from "./Pages/Thread/CreatePost";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -75,6 +76,9 @@ function App() {
                 </Route>
                 <Route path="/thread/:id">
                   <ShowThread/>
+                </Route>
+                <Route path="/post/create/:id">
+                  {user ? <CreatePost/> : <Redirect to="/auth/login"/>}
                 </Route>
               </Switch>
               <Footer />

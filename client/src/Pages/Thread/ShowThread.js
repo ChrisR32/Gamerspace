@@ -5,7 +5,9 @@ import AuthContext from "../../Contexts/AuthContext";
 import HomeLogo from "../../Images/home-icon.png";
 import "../Category/CreateForms.scss";
 import 'bootstrap';
-
+import PostView from './Posts';
+import PostCreate from './CreatePost';
+import CreatePost from "./CreatePost";
 
 export default function ShowThread() {
     const {user} = useContext(AuthContext)
@@ -57,7 +59,7 @@ export default function ShowThread() {
                 <div className="row">
                     <div className="col-2">
                         <p>Profile Pic</p>
-                        <p>UserName</p>
+                        <p></p>
                         <p>Date</p>
                     </div> 
                     <div className="col-10">  
@@ -67,56 +69,12 @@ export default function ShowThread() {
             </div>
         </div>
     </div>         
-       
-         {posts.map((post, index) => (
- <div className="main-content">
-        <div className="row top-row" key={index}>
-            {thread && <div className="col-12 top-cat"><h4><strong>RE: {thread.title}</strong></h4></div>}
-       </div>
-        <div className="row">
-            <div className="col-12 cat-left">
-                
-                <div className="row" >                          
-                    <div className="col-2">
-                        <p>Profile Pic</p>
-                        <p>UserName</p>
-                        <p>{post.createdAt}</p>
-                    </div> 
-                    <div className="col-10">  
-                       <p>{post.content}</p>
-                    </div>
-                </div> 
-            </div> 
-        </div>   
-  
-    </div>
-        
-                            ))}   
-              
-  
-        <br/>
-        <div className="main-content right-align">
-            <button disabled={!hasMore} className="btn-pad-right">Load More Posts</button>
-
-            <button onClick={() => setIsReplying(true)}>Reply</button>
-            <br/>
-            <br/>
-            {isReplying && (
-                <form onSubmit={handleReply}>
-                    <h4 className="left-align">Reply Content</h4>
-                    <textarea placeholder="Content"
-                               rows="5"
-                               cols="40"
-                               label="Content"
-                               value={replyContent}
-                               onChange={e => setReplyContent(e.target.value)}/>
-
-                   <button type="submit">Reply</button>
-                </form>
-              
-            )}
+<div>
+<PostView />
+</div>       
+<CreatePost />
             </div>
-</div>
+
 
 
 

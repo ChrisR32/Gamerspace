@@ -14,6 +14,7 @@ mongoose.connection.on('connected', () => console.log('Connected to MongoDB'));
 
 const app = express();
 app.use(bodyParser.json());
+
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, "..", "client/build")));
