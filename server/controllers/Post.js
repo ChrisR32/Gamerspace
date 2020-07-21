@@ -1,13 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const Post = require('../models/Post');
+const today = Date.now();
 
 router.post('/create', async (req, res) => {
-   const {content, userId, threadId, userName, userAvatar} = req.body;
+   const {content, userId, threadId, userName, userAvatar, niceDate} = req.body;
    const newPost = Post({
        content,
        userName,
-       createdAt: Date.now(),
+       createdAt: today,
+       niceDate,
        threadId,
        userId,
        userAvatar

@@ -38,7 +38,7 @@ export default function BrowseCategories() {
             <ForumLink />
 
             <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Sub categories</strong></h4></div>
+            {category && <div className="col-8 top-cat"><h4><strong>{category.title} sub categories</strong></h4></div>}
                 <div className="col-1"></div>
                 <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
             </div>
