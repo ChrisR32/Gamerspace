@@ -36,7 +36,7 @@ export default function ShowForum() {
 
             
             <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Threads</strong></h4></div>
+            <div className="col-8 top-cat"><h4><strong>Main Categories</strong></h4></div>
                 <div className="col-1"></div>
                 <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
             </div>
@@ -55,34 +55,37 @@ export default function ShowForum() {
                                         <div class="col-lg-7">
                                         <h5><strong>{thread.title}</strong></h5>
                         <p>{thread.createdAt}</p>
-                        </div>
+                     </div>
                                         <div class="col-1 text-center">
                                             <h4>100</h4>
-                                            <p><strong>REPLYS</strong></p>
+                                            <p><strong>POSTS</strong></p>
                                         </div>
                                         <div class="col-3 text-center">
                                             <h6><strong>LAST POST</strong></h6>
                                             <p>1 day ago</p>
                                         </div>
+                                        </div>
+                                        ))} 
+                                        </div>
+                                             <div className="col-1"></div>
+                                             <div className="col-3 cat-right">
                                     
                                
                                 
                                 
                   
-                            </div>
-                ))}
+                          
+               
             </div>
-            <div className="col-1"></div>
-                <div className="col-3 cat-right">
-                
-                
-            </div>
-            
-            </div>
+             </div>
+             
+              
             <div class="adminOnly">
             <button onClick={() => history.push("/thread/create/"+id)}>Create Thread</button>
             </div>
             </div>
-        </div>
+            </div>
+           
+    
     )
 }
