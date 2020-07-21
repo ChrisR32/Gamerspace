@@ -9,6 +9,7 @@ import ForumLink from "../../Components/navigator/forumLink.js";
 
 
 export default function BrowseCategories() {
+    console.log("Show Category")
     const history = useHistory();
     const {id} = useParams();
 
@@ -16,19 +17,18 @@ export default function BrowseCategories() {
     const [fora, setFora] = useState([]);
 
     useEffect(() => {
+        console.log("In use effect")
         const getCategory = async () => {
-        const response = await axios.get('/api/category/'+id);
-        setCategory(response.data);
-    };
-
-    const getFora = async () => {
-      const response = await axios.get('/api/forum/category/'+id);
-        setFora(response.data);
-    };
+            const response = await axios.get('/api/category/'+id);
+            setCategory(response.data);
+        };
+        const getFora = async () => {
+        const response = await axios.get('/api/forum/category/'+id);
+            setFora(response.data);
+        };
         getCategory();
         getFora();
-    }, 
-    );
+    }, []);
 
 
 

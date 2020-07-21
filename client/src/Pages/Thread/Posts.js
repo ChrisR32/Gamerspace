@@ -15,22 +15,21 @@ export default function ShowThread() {
     const [replys, setPosts] = useState([]);
     const [user, setUser] = useState(null);
     useEffect(() => {
-    const getThread = async () => {
-        const response = await axios.get('/api/thread/'+id);
-        setThread(response.data);
+        const getThread = async () => {
+            const response = await axios.get('/api/thread/'+id);
+            setThread(response.data);
 
-    };
+        };
 
-    const getPosts = async () => {
-        const response = await axios.get('/api/post/thread/'+id);
-        setPosts(response.data);
-      
-    };    
+        const getPosts = async () => {
+            const response = await axios.get('/api/post/thread/'+id);
+            setPosts(response.data);
+        
+        };    
         getThread();
         getPosts();
 
-    }, 
-    );
+    }, []);
     return (
  <div>
 

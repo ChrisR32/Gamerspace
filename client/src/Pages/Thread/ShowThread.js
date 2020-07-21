@@ -11,6 +11,7 @@ import CreatePost from "./CreatePost";
 import ForumLink from "../../Components/navigator/forumLink.js";
 
 export default function ShowThread() {
+    console.log("Show Thread")
     const {user} = useContext(AuthContext)
     const [thread, setThread] = useState(null);
     const [posts, setPosts] = useState([]);
@@ -20,13 +21,12 @@ export default function ShowThread() {
     const [replyContent, setReplyContent] = useState("");
     const {id} = useParams();
     useEffect(() => {
-    const getThread = async () => {
-        const response = await axios.get('/api/thread/'+id);
-        setThread(response.data);
-    };        
-        getThread();
-    },
-    );
+        const getThread = async () => {
+            const response = await axios.get('/api/thread/'+id);
+            setThread(response.data);
+        };        
+            getThread();
+    }, []);
 
 
 

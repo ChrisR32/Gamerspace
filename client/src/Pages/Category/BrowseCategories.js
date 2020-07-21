@@ -7,6 +7,7 @@ import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
 
 export default function BrowseCategories() {
+    console.log("Browser Categories")
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {

@@ -30,9 +30,7 @@ export default withRouter(({ history }) => {
         getForum();
         getThread();
 
-    }, 
-  
-    );
+    }, []);
 
 
 

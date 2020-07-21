@@ -8,25 +8,25 @@ import 'bootstrap';
 import ForumLink from "../../Components/navigator/forumLink.js";
 
 export default function ShowForum() {
+    console.log("Show Fourm")
     const history = useHistory();
     const {id} = useParams();
 
     const [forum, setForum] = useState(null);
     const [threads, setThreads] = useState([]);
     useEffect(() => {
-    const getForum = async () => {
-        const response = await axios.get('/api/forum/'+id);
-        setForum(response.data);
-    };
+        const getForum = async () => {
+            const response = await axios.get('/api/forum/'+id);
+            setForum(response.data);
+        };
 
-    const getThreads = async () => {
-        const response = await axios.get('/api/thread/forum/'+id);
-        setThreads(response.data);
-    };        
-        getForum();
-        getThreads();
-    }, 
-    );
+        const getThreads = async () => {
+            const response = await axios.get('/api/thread/forum/'+id);
+            setThreads(response.data);
+        };        
+            getForum();
+            getThreads();
+    }, []);
 
 
 
