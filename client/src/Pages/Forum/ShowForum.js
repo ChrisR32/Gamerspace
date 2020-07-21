@@ -5,6 +5,7 @@ import "../Category/BrowseCategories.scss";
 import CatLogo from "../../Images/cat-icon.png";
 import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
+import ForumLink from "../../Components/navigator/forumLink.js";
 
 export default function ShowForum() {
     const history = useHistory();
@@ -32,9 +33,7 @@ export default function ShowForum() {
     return (
         <div className="top-div login-bottom">
         <div className="main-content">
-            {forum && <h3><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum > GET CATEGORY > {forum.title} ></h3>}
-
-            
+            <ForumLink />
             <div className="row top-row">
             <div className="col-8 top-cat"><h4><strong>Main Categories</strong></h4></div>
                 <div className="col-1"></div>

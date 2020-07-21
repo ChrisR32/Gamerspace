@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const CategorySchema = new Schema({
     title: String,
+    info: String,
+    iconUrl: String,
     createdAt: Date
 });
 

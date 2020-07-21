@@ -8,6 +8,7 @@ import 'bootstrap';
 import PostView from './Posts';
 import PostCreate from './CreatePost';
 import CreatePost from "./CreatePost";
+import ForumLink from "../../Components/navigator/forumLink.js";
 
 export default function ShowThread() {
     const {user} = useContext(AuthContext)
@@ -39,7 +40,9 @@ export default function ShowThread() {
         const data = {
             userId: user._id,
             threadId: thread._id,
-            content: replyContent
+            content: replyContent,
+            threadUser: user.name,
+            threadAvatar: user.avatar
         };
 
         const response = await axios.post("/api/post/create", data);
@@ -50,17 +53,17 @@ export default function ShowThread() {
     return (
 <div className="top-div login-bottom">   
     <div className="main-content">
-        {thread && <h3><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum > GET CATEGORY > GET SUB CATEGORY > {thread.title}</h3>}
+        <ForumLink />
         <div className="row top-row">
             {thread && <div className="col-12 top-cat"><h4><strong>{thread.title}</strong></h4></div>}
         </div>
         <div className="row">   
             <div className="col-12 cat-left">
                 <div className="row">
-                    <div className="col-2">
-                        <p>Profile Pic</p>
-                        <p></p>
-                        <p>Date</p>
+                    <div className="col-2 center-content">
+                    {thread && <p><img src={thread.threadAvatar} className="avatar" alt="User Profile Picture"/></p>}
+                        {thread && <p>Posted by: <strong>{thread.threadUser}</strong></p>}
+                        {thread && <p>{thread.createdAt}</p>}
                     </div> 
                     <div className="col-10">  
                         {thread && <p>{thread.content}</p>}

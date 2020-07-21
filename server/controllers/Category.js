@@ -3,9 +3,11 @@ const router = express.Router();
 const Category = require('../models/Category');
 
 router.post('/create', async (req, res) => {
-   const {title} = req.body;
+   const {title, iconUrl, info} = req.body;
    const newCategory = Category({
        title,
+       info,
+       iconUrl,
        createdAt: Date.now()
    });
 

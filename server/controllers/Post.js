@@ -3,12 +3,14 @@ const router = express.Router();
 const Post = require('../models/Post');
 
 router.post('/create', async (req, res) => {
-   const {content, userId, threadId} = req.body;
+   const {content, userId, threadId, userName, userAvatar} = req.body;
    const newPost = Post({
        content,
+       userName,
        createdAt: Date.now(),
        threadId,
-       userId
+       userId,
+       userAvatar
    });
 
    await newPost.save();

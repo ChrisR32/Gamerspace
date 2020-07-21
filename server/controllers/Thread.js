@@ -3,13 +3,16 @@ const router = express.Router();
 const Thread = require('../models/Thread');
 
 router.post('/create', async (req, res) => {
-   const {title, content, userId, forumId} = req.body;
+   const {title, content, userId, forumId, threadUser, threadAvatar, forumName} = req.body;
    const newThread = Thread({
        title,
        content,
        createdAt: Date.now(),
        forumId,
-       userId
+       userId,
+       threadUser,
+       threadAvatar,
+       forumName,
    });
 
    await newThread.save();

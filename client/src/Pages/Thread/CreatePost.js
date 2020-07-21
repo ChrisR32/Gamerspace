@@ -20,6 +20,8 @@ const CreatePost = () => {
             content,
             userId: user._id,
             threadId: id,
+            userName: user.name,
+            userAvatar: user.avatar
         };
         const response = await axios.post("/api/post/create", data);
         const {_id} = response.data;

@@ -8,19 +8,21 @@ import 'bootstrap';
 const CreateForum = () => {
     const {user} = useContext(AuthContext);
     const {id} = useParams();
+    const {forum} = useHistory();
     const history = useHistory();
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-
     const handleOnSubmit = async event => {
         event.preventDefault();
 
         const data = {
             title,
             content,
+            threadUser: user.name,
+            threadAvatar: user.avatar,
             userId: user._id,
             forumId: id
-        };
+            };
 
         const response = await axios.post('/api/thread/create', data);
         const {_id} = response.data;
