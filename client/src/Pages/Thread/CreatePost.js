@@ -38,19 +38,22 @@ const CreatePost = () => {
     
             <div className="form-group">  
 
-            <label for="content-input">Thread Content</label>
+            <label for="content-input">Reply to thread</label>
 
             <Editor 
-            key={content}
+              selector='textarea#premiumskinsandicons-jam'
+              skin='jam'
+              icons='jam'
+              plugins='code image link lists'
+              toolbar='undo redo | styleselect | bold italic underline forecolor backcolor | link image code | align | bullist numlist'
+           menubar='false'
+              key={content}
             value={content}
             id="content-input"
             outputFormat='text'   
             type="text"
             apiKey="dg479guj522x2tikjfvn3pqyuovquznic0sj4s95sfxd99rg"
             itemId="content input"
-            plugins="save a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable"
-            toolbar="save a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table"
-            toolbar_mode='floating'
             submit_patch='true'
              onMouseLeave={(event, Post) => {
                const data = Post.getContent()
