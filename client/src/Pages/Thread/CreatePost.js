@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import axios from "axios";
 import {useHistory, useParams} from "react-router-dom";
 import AuthContext from "../../Contexts/AuthContext";
+import { Editor } from '@tinymce/tinymce-react';
 import "../Category/CreateForms.scss";
 import 'bootstrap';
 
@@ -29,28 +30,47 @@ const CreatePost = () => {
     };
 
     return (
+
         <div>        
             
 
             <form className="forum" onSubmit={handleOnSubmit}>
     
-            <div className="form-group">
-            <label for="content-input">Reply to thread</label>
-               <textarea placeholder="Content"
-                        rows="5"
-                        cols="40"
-                        itemId="content-input"
-                        value={content}
-                        style={{width: "100%", height: 250}}
-                        onChange={e => setPost(e.target.value)}>
-               </textarea>
+            <div className="form-group">  
+
+            <label for="content-input">Thread Content</label>
+
+            <Editor 
+            key={content}
+            value={content}
+            id="content-input"
+            outputFormat='text'   
+            type="text"
+            apiKey="dg479guj522x2tikjfvn3pqyuovquznic0sj4s95sfxd99rg"
+            itemId="content input"
+            plugins="save a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable"
+            toolbar="save a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table"
+            toolbar_mode='floating'
+            submit_patch='true'
+             onMouseLeave={(event, Post) => {
+               const data = Post.getContent()
+               setPost(data)
+           }
+        }
+
+            />
                </div>
             <br/>
-            <div class="wrap">
+            <div class="wrap wrap-main">
+
                 <button className="submit btn btn-primary btn-lg btn-block" type="submit">Reply</button>
                 </div>
             </form>
+
+
         </div>
+
+
     )
 };
 

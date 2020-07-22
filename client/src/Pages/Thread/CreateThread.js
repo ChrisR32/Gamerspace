@@ -4,6 +4,7 @@ import {useHistory, useParams} from "react-router-dom";
 import AuthContext from "../../Contexts/AuthContext";
 import "../Category/CreateForms.scss";
 import 'bootstrap';
+import { Editor } from '@tinymce/tinymce-react';
 
 const CreateForum = () => {
     const {user} = useContext(AuthContext);
@@ -27,9 +28,14 @@ const CreateForum = () => {
         const response = await axios.post('/api/thread/create', data);
         const {_id} = response.data;
         history.push('/thread/'+_id);
+
+        
+                
     };
 
     return (
+
+        
         <div className="top-div login-bottom">        
             <h1>Create Thread</h1>
 
@@ -45,23 +51,40 @@ const CreateForum = () => {
                         onChange={e => setTitle(e.target.value)}/>
             </div>
             <br/>
+            <div class="wrap wrap-main">
 
             <div className="form-group">
             <label for="content-input">Thread Content</label>
-               <textarea placeholder="Content"
-                        rows="5"
-                        cols="40"
-                        itemId="content-input"
-                        value={content}
-                        style={{width: "100%", height: 250}}
-                        onChange={e => setContent(e.target.value)}>
-               </textarea>
+            <Editor 
+            key={content}
+            value={content}
+            id="content-input"
+            outputFormat='text'   
+            type="text"
+            apiKey="dg479guj522x2tikjfvn3pqyuovquznic0sj4s95sfxd99rg"
+            itemId="content input"
+            plugins="save a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable"
+            toolbar="save a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table"
+            toolbar_mode='floating'
+            submit_patch='true'
+            
+            onMouseLeave={(event, Editor) => {
+                const data = Editor.getContent()
+                setContent(data)}
+  
+               
+            
+         }
+            />
+            
                </div>
             <br/>
-            <div class="wrap">
                 <button className="submit btn btn-primary btn-lg btn-block" type="submit">Create</button>
+                
                 </div>
+                
             </form>
+          
         </div>
     )
 };

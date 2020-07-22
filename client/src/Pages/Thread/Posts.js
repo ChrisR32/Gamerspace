@@ -3,6 +3,7 @@ import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 import "../Category/CreateForms.scss";
 import 'bootstrap';
+import parse from 'html-react-parser';
 
 
 
@@ -50,7 +51,7 @@ export default function ShowThread() {
                         <p>{reply.niceDate}</p>
                     </div> 
                     <div className="col-10">  
-                       <p>{reply.content}</p>
+                       <p>{parse(reply.content)}</p>
                     </div>
                 </div> 
             </div> 

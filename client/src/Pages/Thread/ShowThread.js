@@ -9,6 +9,7 @@ import PostView from './Posts';
 import PostCreate from './CreatePost';
 import CreatePost from "./CreatePost";
 import ForumLink from "../../Components/navigator/forumLink.js";
+import parse from 'html-react-parser';
 
 export default function ShowThread() {
     console.log("Show Thread")
@@ -66,7 +67,7 @@ export default function ShowThread() {
                         {thread && <p>{thread.createdAt}</p>}
                     </div> 
                     <div className="col-10">  
-                        {thread && <p>{thread.content}</p>}
+                        {thread && <div>{parse(thread.content)}</div>}
                     </div>    
                 </div>
             </div>
