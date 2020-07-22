@@ -35,6 +35,20 @@ router.get('/:id', async (req, res) => {
 router.get('/thread/:id', async (req, res) => {
     const posts = await Post.find({threadId: req.params.id});
     res.send(posts);
-})
+});
+
+
+topPosts: (req, res) => {
+    let topPost = post.collection('threads').findOne(
+        {},
+        { sort: { datetime: -1 } },
+        (err, data) => {
+        console.log(data);
+        res.send(topPost);
+        },
+    );
+};
+
+
 
 module.exports = router;

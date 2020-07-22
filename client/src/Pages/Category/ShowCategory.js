@@ -6,7 +6,9 @@ import CatLogo from "../../Images/cat-icon.png";
 import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
 import ForumLink from "../../Components/navigator/forumLink.js";
-import PostLength from "../Thread/PostsRecent.js"
+import PostLength from "../Thread/PostsRecent.js";
+import ShowTopPostThread from "../../Components/TopPosts.js";
+import ShowTopReplyThread from "../../Components/TopReplys.js";
 
 export default function BrowseCategories() {
     console.log("Show Category")
@@ -36,11 +38,15 @@ export default function BrowseCategories() {
         <div className="top-div login-bottom">
         <div className="main-content">
             <ForumLink />
-
+            
             <div className="row top-row">
             {category && <div className="col-8 top-cat"><h4><strong>{category.title} sub categories</strong></h4></div>}
                 <div className="col-1"></div>
-                <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
+                <div className="col-3">
+                    <div className="top-cat text-center">
+                    <h4><strong>Latest thread</strong></h4>
+                    </div>
+                    </div>
             </div>
             <div className="row">
             
@@ -53,7 +59,7 @@ export default function BrowseCategories() {
                         <p><strong>{forum.info}</strong></p>
                     </div>
                     <div class="col-1 text-center">
-                    <h4><PostLength /></h4>
+                    <h4></h4>
                     <p><strong>POSTS</strong></p>
                 </div>
                 <div class="col-3 text-center">
@@ -65,9 +71,16 @@ export default function BrowseCategories() {
                 ))}
              </div>
                 <div className="col-1"></div>
-                <div className="col-3 cat-right">
-                
-                
+                <div className="col-3">
+                    <div className="cat-right">
+                <ShowTopPostThread />
+                </div>
+                <div className="top-cat text-center">
+                    <h4><strong>Latest post</strong></h4>
+                </div>
+                <div className="cat-right">
+                <ShowTopReplyThread />
+                </div>
             </div>
             
             </div>

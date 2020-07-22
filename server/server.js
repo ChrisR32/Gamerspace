@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require("path");
 
 const config = require('./config');
+const { db } = require("./models/User");
 
 mongoose.connect(config.mongoUri, {
     useNewUrlParser: true,
@@ -24,6 +25,28 @@ app.use('/api/category', require("./controllers/Category"));
 app.use('/api/forum', require("./controllers/Forum"));
 app.use('/api/thread', require("./controllers/Thread"));
 app.use('/api/post', require("./controllers/Post"));
+
+app.get('/toppost', function topPosts(req, res) {
+    let topPost = db.collection('threads').findOne(
+        {},
+        { sort: { datetime: -1 } },
+        (err, data) => {
+        console.log(data);
+        res.send(data);
+        },
+    )
+});
+
+app.get('/topreply', function topPosts(req, res) {
+    let topPost = db.collection('posts').findOne(
+        {},
+        { sort: { datetime: -1 } },
+        (err, data) => {
+        console.log(data);
+        res.send(data);
+        },
+    )
+});
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "..", "client/build/index.html"));

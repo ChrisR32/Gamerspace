@@ -5,6 +5,7 @@ import AuthContext from "../../Contexts/AuthContext";
 import "./Auth.scss";
 import "./Auth.css";
 import 'bootstrap';
+import Facebook from './Facebook.js';
 
 export default function Register() {
 
@@ -102,6 +103,7 @@ export default function Register() {
                     </button>
                     </div>
                 </form>
+                
             </div>
   
 

@@ -6,6 +6,9 @@ import CatLogo from "../../Images/cat-icon.png";
 import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
 import ForumLink from "../../Components/navigator/forumLink.js";
+import ShowTopPostThread from "../../Components/TopPosts.js";
+
+
 
 export default function ShowForum() {
     console.log("Show Fourm")
@@ -71,7 +74,7 @@ export default function ShowForum() {
                                         </div>
                                              <div className="col-1"></div>
                                              <div className="col-3 cat-right">
-                                    
+
                                
                                 
                                 
