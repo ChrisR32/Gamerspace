@@ -5,7 +5,8 @@ import axios from "axios";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footer";
 import './scss/app.scss';
-
+import PropTypes from 'prop-types';
+import $ from 'jquery';
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
@@ -26,6 +27,8 @@ function App() {
   useEffect(() => {
     init();
   }, []);
+
+
 
   const init = async () => {
     const token = localStorage.getItem("token");

@@ -3,16 +3,13 @@ import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 import "../Category/CreateForms.scss";
 import 'bootstrap';
-import parse from 'html-react-parser';
 
 
 
 export default function ShowThread() {
     const history = useHistory();
     const {id} = useParams();
-
- 
-
+    
 
     const [thread, setThread] = useState(null);
     const [replys, setPosts] = useState([]);
@@ -48,10 +45,10 @@ export default function ShowThread() {
                     <div className="col-2 center-content">
                         <p><img src={reply.userAvatar} className="avatar" alt="User Profile Picture"/></p>
                         <p>Posted by: <strong>{reply.userName}</strong></p>
-                        <p>{reply.niceDate}</p>
+                        <p>{reply.createdAt}</p>
                     </div> 
                     <div className="col-10">  
-                       <p>{parse(reply.content)}</p>
+                       <p>{reply.content}</p>
                     </div>
                 </div> 
             </div> 

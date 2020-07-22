@@ -8,7 +8,8 @@ const PostSchema = new Schema({
     content: String,
     userId: mongoose.ObjectId,
     userName: String,
-    userAvatar: String
+    userAvatar: String,
+    niceDate: String
 });
 
 const Post = mongoose.model('Post', PostSchema);

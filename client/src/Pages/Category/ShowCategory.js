@@ -6,7 +6,7 @@ import CatLogo from "../../Images/cat-icon.png";
 import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
 import ForumLink from "../../Components/navigator/forumLink.js";
-
+import PostLength from "../Thread/PostsRecent.js"
 
 export default function BrowseCategories() {
     console.log("Show Category")
@@ -38,7 +38,7 @@ export default function BrowseCategories() {
             <ForumLink />
 
             <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Sub categories</strong></h4></div>
+            {category && <div className="col-8 top-cat"><h4><strong>{category.title} sub categories</strong></h4></div>}
                 <div className="col-1"></div>
                 <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
             </div>
@@ -53,7 +53,7 @@ export default function BrowseCategories() {
                         <p><strong>{forum.info}</strong></p>
                     </div>
                     <div class="col-1 text-center">
-                    <h4>100</h4>
+                    <h4><PostLength /></h4>
                     <p><strong>POSTS</strong></p>
                 </div>
                 <div class="col-3 text-center">

@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import axios from "axios";
 import {useHistory, useParams} from "react-router-dom";
 import AuthContext from "../../Contexts/AuthContext";
+import { Editor } from '@tinymce/tinymce-react';
 import "../Category/CreateForms.scss";
 import 'bootstrap';
 
@@ -21,7 +22,7 @@ const CreatePost = () => {
             userId: user._id,
             threadId: id,
             userName: user.name,
-            userAvatar: user.avatar
+            userAvatar: user.avatar,
         };
         const response = await axios.post("/api/post/create", data);
         const {_id} = response.data;
@@ -29,28 +30,50 @@ const CreatePost = () => {
     };
 
     return (
+
         <div>        
             
 
             <form className="forum" onSubmit={handleOnSubmit}>
     
-            <div className="form-group">
+            <div className="form-group">  
+
             <label for="content-input">Reply to thread</label>
-               <textarea placeholder="Content"
-                        rows="5"
-                        cols="40"
-                        itemId="content-input"
-                        value={content}
-                        style={{width: "100%", height: 250}}
-                        onChange={e => setPost(e.target.value)}>
-               </textarea>
+
+            <Editor 
+              selector='textarea#premiumskinsandicons-jam'
+              skin='jam'
+              icons='jam'
+              plugins='code image link lists'
+              toolbar='undo redo | styleselect | bold italic underline forecolor backcolor | link image code | align | bullist numlist'
+           menubar='false'
+              key={content}
+            value={content}
+            id="content-input"
+            outputFormat='text'   
+            type="text"
+            apiKey="dg479guj522x2tikjfvn3pqyuovquznic0sj4s95sfxd99rg"
+            itemId="content input"
+            submit_patch='true'
+             onMouseLeave={(event, Post) => {
+               const data = Post.getContent()
+               setPost(data)
+           }
+        }
+
+            />
                </div>
             <br/>
-            <div class="wrap">
+            <div class="wrap wrap-main">
+
                 <button className="submit btn btn-primary btn-lg btn-block" type="submit">Reply</button>
                 </div>
             </form>
+
+
         </div>
+
+
     )
 };
 

@@ -35,7 +35,7 @@ export default function ShowForum() {
         <div className="main-content">
             <ForumLink />
             <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Main Categories</strong></h4></div>
+            {forum && <div className="col-8 top-cat"><h4><strong>{forum.title} Threads</strong></h4></div>}
                 <div className="col-1"></div>
                 <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
             </div>
@@ -50,16 +50,19 @@ export default function ShowForum() {
                         
                         
                         
-                        <div class="col-1 text-left"><img src={CatLogo} className="cat-logo" alt="Category Logo"/></div>
-                                        <div class="col-lg-7">
-                                        <h5><strong>{thread.title}</strong></h5>
-                        <p>{thread.createdAt}</p>
-                     </div>
+                        <div class="col-2 text-left">
+                            <img src={thread.threadAvatar} className="user-logo" alt="Category Logo"/>
+                        </div>
+                        <div class="col-lg-7">
+                            <h3>{thread.title}</h3>
+                            <h5>Posted by: <strong>{thread.threadUser}</strong></h5>
+                            <p>Thread created at: {thread.createdAt}</p>
+                        </div>
                                         <div class="col-1 text-center">
                                             <h4>100</h4>
                                             <p><strong>POSTS</strong></p>
                                         </div>
-                                        <div class="col-3 text-center">
+                                        <div class="col-2 text-center">
                                             <h6><strong>LAST POST</strong></h6>
                                             <p>1 day ago</p>
                                         </div>
