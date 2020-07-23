@@ -5,8 +5,11 @@ import "./BrowseCategories.scss";
 import CatLogo from "../../Images/cat-icon.png";
 import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
+import ForumLink from "../../Components/navigator/forumLink.js";
+import PostLength from "../Thread/PostsRecent.js"
 
 export default function BrowseCategories() {
+    console.log("Show Category")
     const history = useHistory();
     const {id} = useParams();
 
@@ -14,30 +17,28 @@ export default function BrowseCategories() {
     const [fora, setFora] = useState([]);
 
     useEffect(() => {
+        console.log("In use effect")
         const getCategory = async () => {
-        const response = await axios.get('/api/category/'+id);
-        setCategory(response.data);
-    };
-
-    const getFora = async () => {
-      const response = await axios.get('/api/forum/category/'+id);
-        setFora(response.data);
-    };
+            const response = await axios.get('/api/category/'+id);
+            setCategory(response.data);
+        };
+        const getFora = async () => {
+        const response = await axios.get('/api/forum/category/'+id);
+            setFora(response.data);
+        };
         getCategory();
         getFora();
-    }, 
-    );
+    }, []);
 
 
 
     return (
         <div className="top-div login-bottom">
         <div className="main-content">
-            {category && <h3><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum > {category.title} ></h3>}
-            
+            <ForumLink />
 
             <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Sub categories</strong></h4></div>
+            {category && <div className="col-8 top-cat"><h4><strong>{category.title} sub categories</strong></h4></div>}
                 <div className="col-1"></div>
                 <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
             </div>
@@ -46,13 +47,13 @@ export default function BrowseCategories() {
                  <div className="col-8 cat-left">
                 {fora.map((forum, index) => (
                     <div key={index} className="row cat-find" button onClick={() => history.push(`/forum/${forum._id}`)}>
-                        <div class="col-1 text-left"><img src={CatLogo} className="cat-logo" alt="Category Logo"/></div>
+                        <div class="col-1 text-left"><img src={forum.iconUrl} className="cat-logo" alt="Category Logo"/></div>
                             <div class="col-lg-7">
                             <h5><strong>{forum.title}</strong></h5>
-                        <p>{forum.createdAt}</p>
+                        <p><strong>{forum.info}</strong></p>
                     </div>
                     <div class="col-1 text-center">
-                    <h4>100</h4>
+                    <h4><PostLength /></h4>
                     <p><strong>POSTS</strong></p>
                 </div>
                 <div class="col-3 text-center">

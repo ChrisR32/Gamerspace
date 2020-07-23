@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 const ForumSchema = new Schema({
     title: String,
     createdAt: Date,
-    categoryId: mongoose.ObjectId
+    info: String,
+    iconUrl: String,
+    categoryId: mongoose.ObjectId,
+    caregoryName: String
 });
 
 const Forum = mongoose.model('Forum', ForumSchema);

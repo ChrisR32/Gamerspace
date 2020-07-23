@@ -7,6 +7,7 @@ import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
 
 export default function BrowseCategories() {
+    console.log("Browser Categories")
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -22,7 +23,7 @@ export default function BrowseCategories() {
     return (
         <div className="top-div login-bottom">
         <div className="main-content">
-            <h3><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum ></h3>
+            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum ></h3>
 
             
             <div className="row top-row">
@@ -41,10 +42,10 @@ export default function BrowseCategories() {
                             <div key={index} className="row cat-find" onClick={() => history.push(`/category/${cat._id}`)}>
                                 
                                     
-                                        <div class="col-1 text-left"><img src={CatLogo} className="cat-logo" alt="Category Logo"/></div>
+                                        <div class="col-1 text-left"><img src={cat.iconUrl} className="cat-logo" alt="Category Logo"/></div>
                                         <div class="col-lg-7">
                                         <h5><strong>{cat.title}</strong></h5>
-                                        <p>{cat.createdAt}</p>
+                                        <p><strong>{cat.info}</strong></p>
                                         </div>
                                         <div class="col-1 text-center">
                                             <h4>100</h4>

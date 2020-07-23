@@ -5,9 +5,14 @@ import AuthContext from "../../Contexts/AuthContext";
 import HomeLogo from "../../Images/home-icon.png";
 import "../Category/CreateForms.scss";
 import 'bootstrap';
-
+import PostView from './Posts';
+import PostCreate from './CreatePost';
+import CreatePost from "./CreatePost";
+import ForumLink from "../../Components/navigator/forumLink.js";
+import parse from 'html-react-parser';
 
 export default function ShowThread() {
+    console.log("Show Thread")
     const {user} = useContext(AuthContext)
     const [thread, setThread] = useState(null);
     const [posts, setPosts] = useState([]);
@@ -17,13 +22,12 @@ export default function ShowThread() {
     const [replyContent, setReplyContent] = useState("");
     const {id} = useParams();
     useEffect(() => {
-    const getThread = async () => {
-        const response = await axios.get('/api/thread/'+id);
-        setThread(response.data);
-    };        
-        getThread();
-    },
-    );
+        const getThread = async () => {
+            const response = await axios.get('/api/thread/'+id);
+            setThread(response.data);
+        };        
+            getThread();
+    }, []);
 
 
 
@@ -37,7 +41,9 @@ export default function ShowThread() {
         const data = {
             userId: user._id,
             threadId: thread._id,
-            content: replyContent
+            content: replyContent,
+            threadUser: user.name,
+            threadAvatar: user.avatar
         };
 
         const response = await axios.post("/api/post/create", data);
@@ -48,75 +54,31 @@ export default function ShowThread() {
     return (
 <div className="top-div login-bottom">   
     <div className="main-content">
-        {thread && <h3><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum > GET CATEGORY > GET SUB CATEGORY > {thread.title}</h3>}
+        <ForumLink />
         <div className="row top-row">
             {thread && <div className="col-12 top-cat"><h4><strong>{thread.title}</strong></h4></div>}
         </div>
         <div className="row">   
             <div className="col-12 cat-left">
                 <div className="row">
-                    <div className="col-2">
-                        <p>Profile Pic</p>
-                        <p>UserName</p>
-                        <p>Date</p>
+                    <div className="col-2 center-content">
+                    {thread && <p><img src={thread.threadAvatar} className="avatar" alt="User Profile Picture"/></p>}
+                        {thread && <p>Posted by: <strong>{thread.threadUser}</strong></p>}
+                        {thread && <p>{thread.createdAt}</p>}
                     </div> 
                     <div className="col-10">  
-                        {thread && <p>{thread.content}</p>}
+                        {thread && <div>{parse(thread.content)}</div>}
                     </div>    
                 </div>
             </div>
         </div>
     </div>         
-       
-         {posts.map((post, index) => (
- <div className="main-content">
-        <div className="row top-row" key={index}>
-            {thread && <div className="col-12 top-cat"><h4><strong>RE: {thread.title}</strong></h4></div>}
-       </div>
-        <div className="row">
-            <div className="col-12 cat-left">
-                
-                <div className="row" >                          
-                    <div className="col-2">
-                        <p>Profile Pic</p>
-                        <p>UserName</p>
-                        <p>{post.createdAt}</p>
-                    </div> 
-                    <div className="col-10">  
-                       <p>{post.content}</p>
-                    </div>
-                </div> 
-            </div> 
-        </div>   
-  
-    </div>
-        
-                            ))}   
-              
-  
-        <br/>
-        <div className="main-content right-align">
-            <button disabled={!hasMore} className="btn-pad-right">Load More Posts</button>
-
-            <button onClick={() => setIsReplying(true)}>Reply</button>
-            <br/>
-            <br/>
-            {isReplying && (
-                <form onSubmit={handleReply}>
-                    <h4 className="left-align">Reply Content</h4>
-                    <textarea placeholder="Content"
-                               rows="5"
-                               cols="40"
-                               label="Content"
-                               value={replyContent}
-                               onChange={e => setReplyContent(e.target.value)}/>
-
-                   <button type="submit">Reply</button>
-                </form>
-              
-            )}
+<div>
+<PostView />
+</div>       
+<CreatePost />
             </div>
-</div>
+
 
 
 

@@ -5,7 +5,8 @@ import axios from "axios";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footer";
 import './scss/app.scss';
-
+import PropTypes from 'prop-types';
+import $ from 'jquery';
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
@@ -18,6 +19,7 @@ import ShowForum from "./Pages/Forum/ShowForum";
 import CreateThread from "./Pages/Thread/CreateThread";
 import ShowThread from "./Pages/Thread/ShowThread";
 import Profile from "./Pages/Profile";
+import CreatePost from "./Pages/Thread/CreatePost";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,6 +28,8 @@ function App() {
   useEffect(() => {
     init();
   }, []);
+
+
 
   const init = async () => {
     const token = localStorage.getItem("token");
@@ -77,8 +81,11 @@ function App() {
                 <Route path="/thread/:id">
                   <ShowThread/>
                 </Route>
-                <Route path="/pages/profile">
-                  {!user ? <Profile/> : <Redirect to="/"/>}
+                <Route path="/post/create/:id">
+                  {user ? <CreatePost/> : <Redirect to="/auth/login"/>}
+                </Route>
+                <Route path='/pages/profile'>
+                  {!user ? <Profile />:<Redirect to="/"/>}
                 </Route>
               </Switch>
               <Footer />

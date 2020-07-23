@@ -1,25 +1,39 @@
 const express = require("express");
 const router = express.Router();
 const Post = require('../models/Post');
+const today = Date.now();
 
 router.post('/create', async (req, res) => {
-   const {content, userId, threadId} = req.body;
+   const {content, userId, threadId, userName, userAvatar, niceDate} = req.body;
    const newPost = Post({
        content,
-       createdAt: Date.now(),
+       userName,
+       createdAt: today,
+       niceDate,
        threadId,
-       userId
+       userId,
+       userAvatar
    });
 
    await newPost.save();
-   res.send(newPost);
+
+
 });
 
+router.get('/:id', async (req, res) => {
+    const post = await Post.findById(req.params.id);
+    if (!post) {
+        res.status(404).send({
+            message: 'Category not found'
+        });
+        return;
+    }
+ 
+    res.send(post);
+ });
 
 router.get('/thread/:id', async (req, res) => {
-    const page = req.query.page;
-    const perPage = 10;
-    const posts = await Post.find({threadId: req.params.id}).limit(perPage).skip(perPage * (page - 1));
+    const posts = await Post.find({threadId: req.params.id});
     res.send(posts);
 })
 

@@ -3,11 +3,14 @@ const router = express.Router();
 const Forum = require('../models/Forum');
 
 router.post('/create', async (req, res) => {
-   const {title, categoryId} = req.body;
+   const {title, categoryId, info, iconUrl, categoryName} = req.body;
    const newForum = Forum({
        title,
+       info,
+       iconUrl,
        createdAt: Date.now(),
-       categoryId
+       categoryId,
+       categoryName
    });
 
    await newForum.save();

@@ -84,6 +84,10 @@ body {
         justify-content: center;
       }
      
+      .wrap-main {
+display: block;
+      }
+
     label {
         font-size: 16px;
     }  
@@ -116,4 +120,12 @@ body {
 
 .left-align {
     text-align: left;
+}
+
+.avatar {
+    width: 150px;
+}
+
+.center-content {
+    text-align: center;
 }
