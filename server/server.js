@@ -48,6 +48,42 @@ app.get('/topreply', function topPosts(req, res) {
     )
 });
 
+app.get('/totalthreads', function total(req, res) { 
+    db.collection('threads').countDocuments( {}, function(err, result){
+        if(err){
+            res.send(err)
+        }
+        else{
+            res.json(result)
+        }
+   })
+});
+
+app.get('/totalposts', function total(req, res) { 
+    db.collection('posts').countDocuments( {}, function(err, result){
+        if(err){
+            res.send(err)
+        }
+        else{
+            res.json(result)
+        }
+   })
+});
+
+app.get('/totalusers', function total(req, res) { 
+    db.collection('users').countDocuments( {}, function(err, result){
+        if(err){
+            res.send(err)
+        }
+        else{
+            res.json(result)
+        }
+   })
+});
+
+
+    
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "..", "client/build/index.html"));
 });

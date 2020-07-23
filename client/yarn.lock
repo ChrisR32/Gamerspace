@@ -6447,6 +6447,13 @@ istanbul-reports@^2.2.6:
   dependencies:
     html-escaper "^2.0.0"
 
+javascript-time-ago@^2.0.2:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/javascript-time-ago/-/javascript-time-ago-2.0.13.tgz#aa11f80887ce044f851a78c8761861e436ed0954"
+  integrity sha512-zH+obXUQ4vlc9UlERFe637rNJQaVYLizwODUfGzYN/cNW/owkk5wzb327gAfEXFpI4yhFcStEaoqoJtMGAmrAg==
+  dependencies:
+    relative-time-format "^0.1.3"
+
 jest-changed-files@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-24.9.0.tgz#08d8c15eb79a7fa3fc98269bc14b451ee82f8039"
@@ -9879,6 +9886,14 @@ react-summernote@^2.0.2:
     prop-types "^15.5.10"
     summernote "^0.8.15"
 
+react-time-ago@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-time-ago/-/react-time-ago-6.0.0.tgz#dd2bac5dea344597f795128778e1b6c79377782c"
+  integrity sha512-o3Usm9bk22fVZCV3j/9RkA4vGGCG97/9ZxHKxkfVX6KkB14U8qtug6KRlxZb+tHXi27KoQdsF+Lof9BpxmwKXQ==
+  dependencies:
+    javascript-time-ago "^2.0.2"
+    prop-types "^15.6.0"
+
 react-tinymce@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/react-tinymce/-/react-tinymce-0.5.1.tgz#8f56b7f81cefed06f4aca6b66c903e2db165c2c4"
@@ -10192,6 +10207,11 @@ relateurl@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
+relative-time-format@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/relative-time-format/-/relative-time-format-0.1.3.tgz#d50f49d13f97c7f801afba600b1a4a0890755df2"
+  integrity sha512-0O6i4fKjsx8qhz57zorG+LrIDnF9pSvP5s7H9R1Nb5nSqih5dvRyKzNKs6MxhL3bv4iwsz4DuDwAyw+c47QFIA==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"

@@ -3,6 +3,7 @@ import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 import "../Pages/Category/CreateForms.scss";
 import 'bootstrap';
+import ReactTimeAgo from 'react-time-ago'
 
 export default function ShowTopPostThread() {
     const history = useHistory();

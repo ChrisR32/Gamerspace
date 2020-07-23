@@ -9,6 +9,7 @@ import ForumLink from "../../Components/navigator/forumLink.js";
 import PostLength from "../Thread/PostsRecent.js";
 import ShowTopPostThread from "../../Components/TopPosts.js";
 import ShowTopReplyThread from "../../Components/TopReplys.js";
+import ShowTotals from "../../Components/Totals.js";
 
 export default function BrowseCategories() {
     console.log("Show Category")
@@ -80,6 +81,12 @@ export default function BrowseCategories() {
                 </div>
                 <div className="cat-right">
                 <ShowTopReplyThread />
+                </div>
+                <div className="top-cat text-center">
+                    <h4><strong>Statistics</strong></h4>
+                </div>
+                <div className="cat-right">
+                <ShowTotals />
                 </div>
             </div>
             
