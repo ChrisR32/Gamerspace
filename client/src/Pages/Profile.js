@@ -1,13 +1,13 @@
 import React, { Component, useState } from 'react'
 import {useHistory} from "react-router-dom";
 import axios from "axios";
+import name from "./Auth/Register";
 import 'bootstrap';
 
 class Profile extends Component {
     render() {
         const history = useHistory();
         const [content, setContent] = useState("");
-        const userName = {userName};
         const location = 'Australia';
         const handleImageUpload = e => {
           const [file] = e.target.files;
@@ -16,15 +16,13 @@ class Profile extends Component {
           }
         };
 
-        const comments = [
-          {
-            userName: {userName},
-            createdAt: 1543858000000
-          }
-        ]
-
         return (
         <div>
+        
+        <div className="user-name">
+          <h2>User name: {name}</h2>
+        </div>
+        
         <div className="About-Me">
           <label for="content-input">About Me</label>
              <textarea placeholder="Content"
@@ -36,6 +34,7 @@ class Profile extends Component {
                       onChange={e => setContent(e.target.value)}>
              </textarea>
         </div>
+        
         <div>
           <div className="Profile">
             <input type="file" accept="image/*" onChange={handleImageUpload} multiple = "false" />
