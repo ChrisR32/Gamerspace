@@ -3,10 +3,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-
+const router = express.Router();
 const config = require('./config');
 const { db } = require("./models/User");
-
+const Forum = require('./models/Forum');
 mongoose.connect(config.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -81,8 +81,18 @@ app.get('/totalusers', function total(req, res) {
    })
 });
 
+router.get('/totalinthreads/', async (req, res) => {
+    const forum = await Forum.countDocuments(req.params.id);
+    if (!forum) {
+        res.status(404).send({
+            message: 'Forum not found'
+        });
+        return;
+    }
+ 
+    res.send(forum);
+ });
 
-    
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "..", "client/build/index.html"));

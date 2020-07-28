@@ -10,6 +10,10 @@ import PostCreate from './CreatePost';
 import CreatePost from "./CreatePost";
 import ForumLink from "../../Components/navigator/forumLink.js";
 import parse from 'html-react-parser';
+import ShowTopPostThread from "../../Components/TopPosts.js";
+import ShowTopReplyThread from "../../Components/TopReplys.js";
+import ShowTotals from "../../Components/Totals.js";
+
 
 export default function ShowThread() {
     console.log("Show Thread")
