@@ -155,3 +155,15 @@ li {
     font-size: 16px;
 }
 
+.delete {
+    background-color: red;
+    color: white;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px solid black;
+    font-weight: bolder;
+}
+
+.delete:hover {
+    text-decoration: underline;
+}

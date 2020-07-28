@@ -33,7 +33,10 @@ export default function ShowForum() {
             getThreads();
     }, []);
 
-
+    const handleDelete = (id => {
+        axios.delete(`/api/thread/forum/`, {
+            params: { id }
+        })});
 
     return (
         <div className="top-div login-bottom">
@@ -67,14 +70,15 @@ export default function ShowForum() {
                             <h5>Posted by: <strong>{thread.threadUser}</strong></h5>
                             <p>Thread created at: {thread.createdAt}</p>
                         </div>
-                                        <div class="col-1 text-center">
-                                            <h4>100</h4>
-                                            <p><strong>POSTS</strong></p>
-                                        </div>
-                                        <div class="col-2 text-center">
-                                            <h6><strong>LAST POST</strong></h6>
-                                            <p>1 day ago</p>
-                                        </div>
+                        <div class="col-lg-2 text-center">
+                    <h4></h4>
+                    <div key={index} className="delete" button onClick={() =>  handleDelete(`${thread._id}`)}>
+DELETE</div>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <h6><strong>LAST POST</strong></h6>
+                    <p>1 day ago</p>
+                </div>
                                         </div>
                                         ))} 
                                         </div>

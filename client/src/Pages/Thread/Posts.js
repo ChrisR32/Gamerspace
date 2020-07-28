@@ -33,6 +33,12 @@ export default function ShowThread() {
         getPosts();
 
     }, []);
+
+    const handleDelete = (id => {
+        axios.delete(`/api/post/thread/`, {
+            params: { id }
+        })});
+
     return (
  <div>
 
@@ -49,6 +55,7 @@ export default function ShowThread() {
                         <p><img src={reply.userAvatar} className="avatar" alt="User Profile Picture"/></p>
                         <p>Posted by: <strong>{reply.userName}</strong></p>
                         <p>{reply.niceDate}</p>
+                        <div key={index} className="delete" button onClick={() =>  handleDelete(`${reply._id}`)}>DELETE</div>
                     </div> 
                     <div className="col-10">  
                        <p>{parse(reply.content)}</p>

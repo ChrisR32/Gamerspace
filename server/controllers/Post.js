@@ -38,16 +38,19 @@ router.get('/thread/:id', async (req, res) => {
 });
 
 
-topPosts: (req, res) => {
-    let topPost = post.collection('threads').findOne(
-        {},
-        { sort: { datetime: -1 } },
-        (err, data) => {
-        console.log(data);
-        res.send(topPost);
-        },
-    );
-};
+router.delete('/:id', (req, res) => {
+    const { id } = req.query;
+
+    Post.findByIdAndDelete(id, (error, data) => {
+        if (error) {
+            console.log('error in deleting!');
+            throw error;
+        } else {
+            console.log('category has been deleted', data);
+            res.status(204).json(data);
+        }
+    });
+});
 
 
 

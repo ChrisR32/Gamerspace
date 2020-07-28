@@ -33,7 +33,11 @@ export default function BrowseCategories() {
         getFora();
     }, []);
 
-
+const handleDelete = (id => {
+    axios.delete(`/api/forum/category/`, {
+        params: { id }
+    })});
+    
 
     return (
         <div className="top-div login-bottom">
@@ -52,6 +56,7 @@ export default function BrowseCategories() {
             <div className="row">
             
                  <div className="col-8 cat-left">
+               
                 {fora.map((forum, index) => (
                     <div key={index} className="row cat-find" button onClick={() => history.push(`/forum/${forum._id}`)}>
                         <div class="col-1 text-left"><img src={forum.iconUrl} className="cat-logo" alt="Category Logo"/></div>
@@ -59,17 +64,20 @@ export default function BrowseCategories() {
                             <h5><strong>{forum.title}</strong></h5>
                         <p><strong>{forum.info}</strong></p>
                     </div>
-                    <div class="col-1 text-center">
+                    <div class="col-lg-2 text-center">
                     <h4></h4>
-                    <p><strong>POSTS</strong></p>
+                    <div key={index} className="delete" button onClick={() =>  handleDelete(`${forum._id}`)}>
+DELETE</div>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col-lg-2 text-center">
                     <h6><strong>LAST POST</strong></h6>
                     <p>1 day ago</p>
                 </div>
+                
                 </div>
 
                 ))}
+
              </div>
                 <div className="col-1"></div>
                 <div className="col-3">

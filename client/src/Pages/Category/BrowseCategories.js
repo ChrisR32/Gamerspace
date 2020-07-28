@@ -22,6 +22,12 @@ export default function BrowseCategories() {
         setCategories(response.data);
     };
 
+    const handleDelete = (id => {
+        axios.delete(`/api/category/`, {
+            params: { id }
+        })});
+    
+
     const history = useHistory();
     return (
         <div className="top-div login-bottom">
@@ -54,14 +60,15 @@ export default function BrowseCategories() {
                                         <h5><strong>{cat.title}</strong></h5>
                                         <p><strong>{cat.info}</strong></p>
                                         </div>
-                                        <div class="col-1 text-center">
-                                            <h4>100</h4>
-                                            <p><strong>POSTS</strong></p>
-                                        </div>
-                                        <div class="col-3 text-center">
-                                            <h6><strong>LAST POST</strong></h6>
-                                            <p>1 day ago</p>
-                                        </div>
+                                        <div class="col-lg-2 text-center">
+                    <h4></h4>
+                    <div key={index} className="delete" button onClick={() =>  handleDelete(`${cat._id}`)}>
+DELETE</div>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <h6><strong>LAST POST</strong></h6>
+                    <p>1 day ago</p>
+                </div>
                                     
                                
                                 

@@ -55,6 +55,12 @@ export default function ShowThread() {
     }
 
     const history = useHistory();
+
+    const handleDelete = (id => {
+        axios.delete(`/api/thread/forum/`, {
+            params: { id }
+        })});
+
     return (
 <div className="top-div login-bottom">   
     <div className="main-content">
@@ -69,6 +75,8 @@ export default function ShowThread() {
                     {thread && <p><img src={thread.threadAvatar} className="avatar" alt="User Profile Picture"/></p>}
                         {thread && <p>Posted by: <strong>{thread.threadUser}</strong></p>}
                         {thread && <p>{thread.createdAt}</p>}
+                        <div className="delete" button onClick={() =>  handleDelete(`${thread._id}`)}>DELETE</div>
+
                     </div> 
                     <div className="col-10">  
                         {thread && <div>{parse(thread.content)}</div>}
