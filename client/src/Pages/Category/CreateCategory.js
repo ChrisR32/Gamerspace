@@ -3,6 +3,8 @@ import axios from "axios";
 import {useHistory} from "react-router-dom";
 import "./CreateForms.scss";
 import 'bootstrap';
+import Uploader from '../../Components/Uploader';
+import DisplayImage from '../../Components/DisplayImage';
 
 const CreateCategory = () => {
     const history = useHistory();
@@ -40,6 +42,7 @@ const CreateCategory = () => {
             <div className="form-group">
             <label for="pic-input">Picture URL</label>
                 <input label="icon" itemId="pic-input" value={iconUrl} onChange={e => setIcon(e.target.value)}/>
+
             </div>
             <br/>
             <div class="wrap">

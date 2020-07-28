@@ -6,7 +6,7 @@ const path = require("path");
 const router = express.Router();
 const config = require('./config');
 const { db } = require("./models/User");
-const Forum = require('./models/Forum');
+
 mongoose.connect(config.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -17,6 +17,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors());
+
 
 app.use(express.static(path.join(__dirname, "..", "client/build")));
 
@@ -94,9 +95,47 @@ router.get('/totalinthreads/', async (req, res) => {
  });
 
 
-app.get('*', (req, res) => {
+
+// AWS ADDED
+
+const {
+    generateGetUrl,
+    generatePutUrl
+  } = require('./AWSPresigner');
+  
+  // GET URL
+  app.get('/generate-get-url', (req, res) => {
+    // Both Key and ContentType are defined in the client side.
+    // Key refers to the remote name of the file.
+    const { Key } = req.query;
+    generateGetUrl(Key)
+      .then(getURL => {      
+        res.send(getURL);
+      })
+      .catch(err => {
+        res.send(err);
+      });
+  });
+  
+  // PUT URL
+  app.get('/generate-put-url', (req,res)=>{
+    // Both Key and ContentType are defined in the client side.
+    // Key refers to the remote name of the file.
+    // ContentType refers to the MIME content type, in this case image/jpeg
+    const { Key, ContentType } =  req.query;
+    generatePutUrl(Key, ContentType).then(putURL => {
+      res.send({putURL});
+    })
+    .catch(err => {
+      res.send(err);
+    });
+  });
+  // AWS ADDED END
+
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "..", "client/build/index.html"));
 });
+
 
 const PORT = 5005;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
