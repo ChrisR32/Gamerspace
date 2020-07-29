@@ -50,7 +50,7 @@ export default function Register() {
     return (
         <div className="top-div-news login-bottom">        
         <h1 className="center-text">Exclusive offers in your inbox</h1>
-        <h4 className="center-text">Subscribe today to recieve offers avaliable only to our subscribers.</h4>
+        <h4 className="center-text"><strong>Subscribe today to recieve offers avaliable only to our subscribers.</strong></h4>
                 <form className="news-forum" onSubmit={handleOnSubmit}>
                         <div className="form-group">
                             <label for="name-input">First Name</label>

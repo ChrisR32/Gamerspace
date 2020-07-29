@@ -86,22 +86,54 @@ border-radius: 5px;
   }
 
 .contact-view a {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: auto;
+    display: block;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: rgb(255, 255, 255);
-    font-family: 'Baloo Da 2', cursive;
-    font-size: 26px;
-    color: black;
-    font-weight: bolder;
-    border-radius: 5px;
-    border: 3px solid black;
-    margin-top: 30px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border: 1.1px solid #007bff;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    -webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    align-items: flex-start;
+    border-radius: 4.8px;
+    padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+padding-top:10px;
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+transition-property: color, background-color, border-color, box-shadow;
+transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+transition-delay: 0s, 0s, 0s, 0s;
+    // width: 100%;
+    // padding-left: 20px;
+    // padding-right: 20px;
+    // background-color: rgb(255, 255, 255);
+    // font-family: 'Baloo Da 2', cursive;
+    // font-size: 26px;
+    // color: black;
+    // font-weight: bolder;
+    // border-radius: 5px;
+    // border: 3px solid black;
+    // margin-top: 30px;
 }
 
 .contact-view a:hover {
     text-decoration: none;
-color: rgb(255, 165, 30);
-border: 3px solid rgb(255, 165, 30);
+    color: white;
+    background-color: #0477f1;
+    border-color: #0477f1;
 
 }

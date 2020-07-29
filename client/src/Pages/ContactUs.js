@@ -16,7 +16,7 @@ export default function Home() {
             titlePlaceholder="Title"
             contentsRows="6"
             contentsPlaceholder="Contents"
-            buttonText="SEND EMAIL" />
+            buttonText="Contact us" />
             <br/>
 </div>
 </div>

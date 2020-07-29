@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
                             <div class="col-12 col-md mb-1 mb-md-0">
-                <a href="#" class="text-uppercase strong">ABOUT US</a>
+                <a href="/about" class="text-uppercase strong">ABOUT US</a>
             </div>
                             <div class="col-12 col-md mb-1 mb-md-0">
                 <a href="/contact" class="text-uppercase strong">CONTACT US</a>
