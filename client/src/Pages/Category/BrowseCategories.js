@@ -32,7 +32,7 @@ export default function BrowseCategories() {
     return (
         <div className="top-div login-bottom">
         <div className="main-content">
-            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum ></h3>
+            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum -</h3>
 
             
             <div className="row top-row">

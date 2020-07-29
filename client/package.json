@@ -30,14 +30,17 @@
     "react-dom": "^16.13.1",
     "react-facebook-login": "^4.1.1",
     "react-mail-form": "^2.1.0",
+    "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "react-summernote": "^2.0.2",
     "react-time-ago": "^6.0.0",
     "sass-loader": "^9.0.2",
+    "storybook": "^5.3.19",
     "style-loader": "^1.2.1",
     "tinymce": "^5.4.1",
     "tinymce-aws-s3-upload-plugin": "^1.0.2",
+    "typescript": "^3.9.7",
     "validator": "^12.1.0"
   },
   "scripts": {
