@@ -87,7 +87,7 @@ export default function MenuAppBar() {
     
         
             <li className="nav-item ">
-                <a className="nav-link " href="/" target="">
+                <a className="nav-link " href="/contact" target="">
                     Contact
                     
                 </a>

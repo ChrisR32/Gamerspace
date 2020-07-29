@@ -35,7 +35,7 @@ export default function Footer() {
                 <a href="#" target="_blank" class="text-uppercase strong">ABOUT US</a>
             </div>
                             <div class="col-12 col-md mb-1 mb-md-0">
-                <a href="#" target="_blank" class="text-uppercase strong">CONTACT US</a>
+                <a href="/contact" target="_blank" class="text-uppercase strong">CONTACT US</a>
             </div>
                     </div>
 

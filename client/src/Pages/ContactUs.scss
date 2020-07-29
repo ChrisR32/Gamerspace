@@ -1,0 +1,49 @@
+.main-content {
+    width: 90%;
+    margin: auto;
+}
+
+br {
+line-height: 1px;
+}
+
+.view {
+    display: row;
+    margin: auto;
+    vertical-align: middle;
+    border-color: inherit;
+    color: #212529;
+    text-align: start;
+    border-spacing: 2px;
+    border: 1px solid black;
+    padding: 1rem !important;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    background-color:white;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+
+box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+
+color:rgb(20, 20, 20);
+font-size:16px;
+font-weight:400;
+
+line-height:24px;
+margin-bottom:38.9425px;
+}
+
+.cat-container {
+    display: row;
+    width: max-content;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+}
