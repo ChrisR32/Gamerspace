@@ -26,8 +26,10 @@ const CreatePost = () => {
         };
         const response = await axios.post("/api/post/create", data);
         const {_id} = response.data;
-        history.push('/post/'+_id);
+        history.push('/thread/'+id);
     };
+
+   
 
     return (
 

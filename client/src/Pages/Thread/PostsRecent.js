@@ -18,13 +18,15 @@ export default function ShowThread() {
         const getThread = async () => {
             const response = await axios.get('/api/thread/'+id);
             setThread(response.data);
+            history.push('/thread/'+id);   
+
 
         };
 
         const getPosts = async () => {
             const response = await axios.get('/api/post/thread/'+id);
             setPosts(response.data);
-        
+            history.push('/thread/'+id);   
         };    
         getThread();
         getPosts();
