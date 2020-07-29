@@ -63,8 +63,15 @@ export default function ShowThread() {
 
     return (
 <div className="top-div login-bottom">   
-    <div className="main-content">
+    <div className="main-content-form">
+    <div className="row">
+                <div className="col-6">
         <ForumLink />
+        </div>
+<div className="col-6">
+<ShowTotals />
+</div>
+            </div>
         <div className="row top-row">
             {thread && <div className="col-12 top-cat"><h4><strong>{thread.title}</strong></h4></div>}
         </div>
@@ -84,11 +91,13 @@ export default function ShowThread() {
                 </div>
             </div>
         </div>
-    </div>         
+            
 <div>
 <PostView />
-</div>       
+</div>      
+ </div> 
 <CreatePost />
+
             </div>
 
 

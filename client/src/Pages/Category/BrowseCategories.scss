@@ -1,5 +1,5 @@
-.main-content {
-    width: 90%;
+.main-content-form {
+    width: 75%;
     margin: auto;
 }
 
@@ -118,11 +118,15 @@ li {
 }
 
 .cat-logo {
-  width: 46px;  
+  width: 100%; 
+}
+
+.center-inside {
+    text-align: center;
 }
 
 .user-logo {
-    width: 100px;
+    width: 100%;
 }
 
 .top-cat {
@@ -166,4 +170,8 @@ li {
 
 .delete:hover {
     text-decoration: underline;
+}
+
+.adminOnly {
+  
 }

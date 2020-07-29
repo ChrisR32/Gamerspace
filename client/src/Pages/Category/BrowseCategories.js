@@ -31,22 +31,23 @@ export default function BrowseCategories() {
     const history = useHistory();
     return (
         <div className="top-div login-bottom">
-        <div className="main-content">
-            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum -</h3>
-
-            
+        <div className="main-content-form">
+            <div className="row">
+                <div className="col-6">
+            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum</h3>
+</div>
+<div className="col-6">
+<ShowTotals />
+</div>
+            </div>
             <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Main Categories</strong></h4></div>
-                <div className="col-1"></div>
-                <div className="col-3">
-                    <div className="top-cat text-center">
-                    <h4><strong>Latest thread</strong></h4>
-                    </div>
+            <div className="col-12 top-cat"><h4><strong>Main Categories</strong></h4></div>
+   
             </div>
-            </div>
+           
             <div className="row">
             
-                 <div className="col-8 cat-left">
+                 <div className="col-12 cat-left">
                    
                     
                             
@@ -55,20 +56,17 @@ export default function BrowseCategories() {
                             <div key={index} className="row cat-find" onClick={() => history.push(`/category/${cat._id}`)}>
                                 
                                     
-                                        <div class="col-1 text-left"><img src={cat.iconUrl} className="cat-logo" alt="Category Logo"/></div>
-                                        <div class="col-lg-7">
-                                        <h5><strong>{cat.title}</strong></h5>
-                                        <p><strong>{cat.info}</strong></p>
+                                        <div class="col-1 center-inside"><img src={cat.iconUrl} className="cat-logo" alt="Category Logo"/></div>
+                                        <div class="col-lg-9">
+                                        <h2><strong>{cat.title}</strong></h2>
+                                        <h5><strong>{cat.info}</strong></h5>
                                         </div>
                                         <div class="col-lg-2 text-center">
                     <h4></h4>
                     <div key={index} className="delete" button onClick={() =>  handleDelete(`${cat._id}`)}>
 DELETE</div>
                 </div>
-                <div class="col-lg-2 text-center">
-                    <h6><strong>LAST POST</strong></h6>
-                    <p>1 day ago</p>
-                </div>
+
                                     
                                
                                 
@@ -80,28 +78,13 @@ DELETE</div>
                     
               
                 </div>
-                <div className="col-1"></div>
-                <div className="col-3">
-                    <div className="cat-right">
-                <ShowTopPostThread />
-                </div>
-                <div className="top-cat text-center">
-                    <h4><strong>Latest post</strong></h4>
-                </div>
-                <div className="cat-right">
-                <ShowTopReplyThread />
-                </div>
-                <div className="top-cat text-center">
-                    <h4><strong>Statistics</strong></h4>
-                </div>
-                <div className="cat-right">
-                <ShowTotals />
-                </div>
+                
             
-            </div>
-            </div>
+           
+            
             <div class="adminOnly">
-                <button onClick={() => history.push('/category/create')}>Create Category - ADMINISTRATORS ONLY</button>
+                <button onClick={() => history.push('/category/create')}>Create Category</button>
+            </div>
             </div>
         </div>
         </div>

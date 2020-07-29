@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import FooterImg from "../Images/pac-man.png";
+import FooterImg from "../Images/ducko.gif";
 import FooterLogo from "../Images/logo5.png";
 import "./footer.scss";
 import 'bootstrap';

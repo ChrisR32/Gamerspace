@@ -40,20 +40,22 @@ export default function ShowForum() {
 
     return (
         <div className="top-div login-bottom">
-        <div className="main-content">
+        <div className="main-content-form">
+        <div className="row">
+                <div className="col-6">
             <ForumLink />
+            </div>
+<div className="col-6">
+<ShowTotals />
+</div>
+            </div>
             <div className="row top-row">
-            {forum && <div className="col-8 top-cat"><h4><strong>{forum.title} Threads</strong></h4></div>}
-                <div className="col-1"></div>
-                <div className="col-3">
-                    <div className="top-cat text-center">
-                    <h4><strong>Latest thread</strong></h4>
-                    </div>
-                    </div>
+            {forum && <div className="col-12 top-cat"><h4><strong>{forum.title} Threads</strong></h4></div>}
+                
                                 </div>
             <div className="row">
             
-                 <div className="col-8 cat-left">
+                 <div className="col-12 cat-left">
                    
                     
                             
@@ -65,7 +67,7 @@ export default function ShowForum() {
                         <div class="col-2 text-left">
                             <img src={thread.threadAvatar} className="user-logo" alt="Category Logo"/>
                         </div>
-                        <div class="col-lg-7">
+                        <div class="col-lg-8">
                             <h3>{thread.title}</h3>
                             <h5>Posted by: <strong>{thread.threadUser}</strong></h5>
                             <p>Thread created at: {thread.createdAt}</p>
@@ -75,36 +77,16 @@ export default function ShowForum() {
                     <div key={index} className="delete" button onClick={() =>  handleDelete(`${thread._id}`)}>
 DELETE</div>
                 </div>
-                <div class="col-lg-2 text-center">
-                    <h6><strong>LAST POST</strong></h6>
-                    <p>1 day ago</p>
-                </div>
+                
                                         </div>
                                         ))} 
-                                        </div>
-                                             <div className="col-1"></div>
-                                             <div className="col-3">
-                    <div className="cat-right">
-                <ShowTopPostThread />
-                </div>
-                <div className="top-cat text-center">
-                    <h4><strong>Latest post</strong></h4>
-                </div>
-                <div className="cat-right">
-                <ShowTopReplyThread />
-                </div>
-                <div className="top-cat text-center">
-                    <h4><strong>Statistics</strong></h4>
-                </div>
-                <div className="cat-right">
-                <ShowTotals />
-                </div>
-            </div>
+                                       
              </div>
              
               
             <div class="adminOnly">
             <button onClick={() => history.push("/thread/create/"+id)}>Create Thread</button>
+            </div>
             </div>
             </div>
             </div>

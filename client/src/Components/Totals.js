@@ -39,17 +39,18 @@ export default function ShowTotals() {
     return (
             <div>   
                 <div className="row">
-                    <div className="col-4 center-content border-right">
-                        <strong><p>THREADS</p></strong> 
-                        {thread && <h4><strong>{thread}</strong></h4>} 
+                <div className="col-3 center-content">
+<p className="total-heading">STATISTICS : </p>
+</div>
+                    <div className="col-3 center-content">
+                        
+                        {thread && <p className="total-border">THREADS : <strong>{thread}</strong></p>} 
                     </div>   
-                    <div className="col-4 center-content border-right">
-                        <strong><p>POSTS</p></strong> 
-                        {post && <h4><strong>{post}</strong></h4>}
+                    <div className="col-3 center-content">
+                        {post && <p className="total-border">POSTS : <strong>{post}</strong></p>}
                     </div>       
-                    <div className="col-4 center-content">
-                        <strong><p>USERS</p></strong>
-                        {user &&  <h4><strong>{user}</strong></h4>}
+                    <div className="col-3 center-content">
+                        {user &&  <p className="total-border">USERS : <strong>{user}</strong></p>}
                     </div>
                 </div>
             </div>

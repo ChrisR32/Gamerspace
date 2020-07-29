@@ -29,7 +29,7 @@ export default function Home() {
             >
                 <div>
                     <img src={SlideOne} />
-                    <p className="home-info">Login <a href="/auth/login" class="strong home-slide">here</a>&nbsp;&nbsp; new to Gamerspace? Register <a href="/auth/register" class="strong home-slide">here</a></p>
+                    <p className="home-info">Login <a href="/auth/login" class="strong home-slide">here</a>&nbsp;&nbsp;New to Gamerspace? Register <a href="/auth/register" class="strong home-slide">here</a></p>
                 </div>
                 <div>
                     <img src={SlideTwo} />
@@ -49,7 +49,7 @@ export default function Home() {
                 </div>
                 <div>
                     <img src={SlideSix} />
-                    <p className="home-info">Discover exclusive <a href="/news" class="strong home-slide">here</a></p>
+                    <p className="home-info">Discover exclusive content <a href="/news" class="strong home-slide">here</a></p>
                 </div>
             </Carousel>
 </div>
