@@ -4,3 +4,4 @@ server/config.js
 client/.env
 client/src/index.html
 client/src/index.html
+server/.env
