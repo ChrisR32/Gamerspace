@@ -32,4 +32,18 @@ router.get('/', async (req, res) => {
     res.send(cats);
 })
 
+router.delete('/', (req, res) => {
+    const { id } = req.query;
+
+    Category.findByIdAndDelete(id, (error, data) => {
+        if (error) {
+            console.log('error in deleting!');
+            throw error;
+        } else {
+            console.log('category has been deleted', data);
+            res.status(204).json(data);
+        }
+    });
+});
+
 module.exports = router;

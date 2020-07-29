@@ -10,6 +10,10 @@ import PostCreate from './CreatePost';
 import CreatePost from "./CreatePost";
 import ForumLink from "../../Components/navigator/forumLink.js";
 import parse from 'html-react-parser';
+import ShowTopPostThread from "../../Components/TopPosts.js";
+import ShowTopReplyThread from "../../Components/TopReplys.js";
+import ShowTotals from "../../Components/Totals.js";
+
 
 export default function ShowThread() {
     console.log("Show Thread")
@@ -25,6 +29,7 @@ export default function ShowThread() {
         const getThread = async () => {
             const response = await axios.get('/api/thread/'+id);
             setThread(response.data);
+            history.push('/thread/'+id);
         };        
             getThread();
     }, []);
@@ -51,10 +56,23 @@ export default function ShowThread() {
     }
 
     const history = useHistory();
+
+    const handleDelete = (id => {
+        axios.delete(`/api/thread/forum/`, {
+            params: { id }
+        })});
+
     return (
 <div className="top-div login-bottom">   
-    <div className="main-content">
+    <div className="main-content-form">
+    <div className="row">
+                <div className="col-6">
         <ForumLink />
+        </div>
+<div className="col-6">
+<ShowTotals />
+</div>
+            </div>
         <div className="row top-row">
             {thread && <div className="col-12 top-cat"><h4><strong>{thread.title}</strong></h4></div>}
         </div>
@@ -65,6 +83,8 @@ export default function ShowThread() {
                     {thread && <p><img src={thread.threadAvatar} className="avatar" alt="User Profile Picture"/></p>}
                         {thread && <p>Posted by: <strong>{thread.threadUser}</strong></p>}
                         {thread && <p>{thread.createdAt}</p>}
+                        <div className="delete" button onClick={() =>  handleDelete(`${thread._id}`)}>DELETE</div>
+
                     </div> 
                     <div className="col-10">  
                         {thread && <div>{parse(thread.content)}</div>}
@@ -72,11 +92,13 @@ export default function ShowThread() {
                 </div>
             </div>
         </div>
-    </div>         
+            
 <div>
 <PostView />
-</div>       
+</div>      
+ </div> 
 <CreatePost />
+
             </div>
 
 

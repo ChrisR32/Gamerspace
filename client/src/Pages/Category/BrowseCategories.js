@@ -5,6 +5,9 @@ import "./BrowseCategories.scss";
 import CatLogo from "../../Images/cat-icon.png";
 import HomeLogo from "../../Images/home-icon.png";
 import 'bootstrap';
+import ShowTopPostThread from "../../Components/TopPosts.js";
+import ShowTopReplyThread from "../../Components/TopReplys.js";
+import ShowTotals from "../../Components/Totals.js";
 
 export default function BrowseCategories() {
     console.log("Browser Categories")
@@ -19,21 +22,32 @@ export default function BrowseCategories() {
         setCategories(response.data);
     };
 
+    const handleDelete = (id => {
+        axios.delete(`/api/category/`, {
+            params: { id }
+        })});
+    
+
     const history = useHistory();
     return (
         <div className="top-div login-bottom">
-        <div className="main-content">
-            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum ></h3>
-
-            
-            <div className="row top-row">
-            <div className="col-8 top-cat"><h4><strong>Main Categories</strong></h4></div>
-                <div className="col-1"></div>
-                <div className="col-3 top-cat text-center"><h4><strong>Recent Posts</strong></h4></div>
+        <div className="main-content-form">
+            <div className="row">
+                <div className="col-6">
+            <h3 className="mini-text"><img src={HomeLogo} className="home-logo" alt="Category Logo"/> Forum</h3>
+</div>
+<div className="col-6">
+<ShowTotals />
+</div>
             </div>
+            <div className="row top-row">
+            <div className="col-12 top-cat"><h4><strong>Main Categories</strong></h4></div>
+   
+            </div>
+           
             <div className="row">
             
-                 <div className="col-8 cat-left">
+                 <div className="col-12 cat-left">
                    
                     
                             
@@ -42,19 +56,17 @@ export default function BrowseCategories() {
                             <div key={index} className="row cat-find" onClick={() => history.push(`/category/${cat._id}`)}>
                                 
                                     
-                                        <div class="col-1 text-left"><img src={cat.iconUrl} className="cat-logo" alt="Category Logo"/></div>
-                                        <div class="col-lg-7">
-                                        <h5><strong>{cat.title}</strong></h5>
-                                        <p><strong>{cat.info}</strong></p>
+                                        <div class="col-1 center-inside"><img src={cat.iconUrl} className="cat-logo" alt="Category Logo"/></div>
+                                        <div class="col-lg-9">
+                                        <h2><strong>{cat.title}</strong></h2>
+                                        <h5><strong>{cat.info}</strong></h5>
                                         </div>
-                                        <div class="col-1 text-center">
-                                            <h4>100</h4>
-                                            <p><strong>POSTS</strong></p>
-                                        </div>
-                                        <div class="col-3 text-center">
-                                            <h6><strong>LAST POST</strong></h6>
-                                            <p>1 day ago</p>
-                                        </div>
+                                        <div class="col-lg-2 text-center">
+                    <h4></h4>
+                    <div key={index} className="delete" button onClick={() =>  handleDelete(`${cat._id}`)}>
+DELETE</div>
+                </div>
+
                                     
                                
                                 
@@ -66,15 +78,13 @@ export default function BrowseCategories() {
                     
               
                 </div>
-                <div className="col-1"></div>
-                <div className="col-3 cat-right">
                 
-                
-            </div>
             
-            </div>
+           
+            
             <div class="adminOnly">
-                <button onClick={() => history.push('/category/create')}>Create Category - ADMINISTRATORS ONLY</button>
+                <button onClick={() => history.push('/category/create')}>Create Category</button>
+            </div>
             </div>
         </div>
         </div>

@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
         createdAt: Date.now(),
-        avatar: null,
+        avatar: req.body.avatar,
         admin: false
     });
 

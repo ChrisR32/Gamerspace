@@ -35,6 +35,23 @@ router.get('/:id', async (req, res) => {
 router.get('/thread/:id', async (req, res) => {
     const posts = await Post.find({threadId: req.params.id});
     res.send(posts);
-})
+});
+
+
+router.delete('/:id', (req, res) => {
+    const { id } = req.query;
+
+    Post.findByIdAndDelete(id, (error, data) => {
+        if (error) {
+            console.log('error in deleting!');
+            throw error;
+        } else {
+            console.log('category has been deleted', data);
+            res.status(204).json(data);
+        }
+    });
+});
+
+
 
 module.exports = router;

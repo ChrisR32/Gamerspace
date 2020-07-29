@@ -1,5 +1,5 @@
-.main-content {
-    width: 90%;
+.main-content-form {
+    width: 75%;
     margin: auto;
 }
 
@@ -24,7 +24,6 @@ line-height: 1px;
     background-color:white;
 border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
-height: 300px;
 
 box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 
@@ -119,11 +118,15 @@ li {
 }
 
 .cat-logo {
-  width: 46px;  
+  width: 100%; 
+}
+
+.center-inside {
+    text-align: center;
 }
 
 .user-logo {
-    width: 100px;
+    width: 100%;
 }
 
 .top-cat {
@@ -156,3 +159,19 @@ li {
     font-size: 16px;
 }
 
+.delete {
+    background-color: red;
+    color: white;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px solid black;
+    font-weight: bolder;
+}
+
+.delete:hover {
+    text-decoration: underline;
+}
+
+.adminOnly {
+  
+}

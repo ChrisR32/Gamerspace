@@ -39,7 +39,7 @@ export default withRouter(({ history }) => {
 
 
     <div className="forum-nav">
-      <h3 className="forum_h3"><img src={HomeLogo} className="home-logo" alt="Category Logo"/>&nbsp;<a className="forum_a" href="/category/" target="">Forum</a> >&nbsp;</h3><h3 className="back-to" onClick={() => history.goBack()}>Return to Previous</h3><h3 className="forum_h3">&nbsp;>&nbsp;</h3>{category && <h3 className="current">{category.title}</h3>} {thread && <h3 className="current">{thread.title}</h3>} {forum && <h3 className="current">{forum.title}</h3>}
+      <h3 className="forum_h3"><img src={HomeLogo} className="home-logo" alt="Category Logo"/>&nbsp;<a className="forum_a" href="/category/" target="">Forum</a> -&nbsp;</h3><h3 className="back-to" onClick={() => history.goBack()}>Return to Previous</h3><h3 className="forum_h3">&nbsp;-&nbsp;</h3>{category && <h3 className="current">{category.title}</h3>} {thread && <h3 className="current">{thread.title}</h3>} {forum && <h3 className="current">{forum.title}</h3>}
     </div>
   )
 });

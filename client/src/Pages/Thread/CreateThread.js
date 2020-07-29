@@ -40,6 +40,7 @@ const CreateForum = () => {
             <h1>Create Thread</h1>
 
             <form className="forum" onSubmit={handleOnSubmit}>
+                
             <div className="form-group">
             <label for="title-input">Thread Title</label>
 
@@ -51,7 +52,7 @@ const CreateForum = () => {
                         onChange={e => setTitle(e.target.value)}/>
             </div>
             <br/>
-            <div class="wrap wrap-main">
+            
 
             <div className="form-group">
             <label for="content-input">Thread Content</label>
@@ -85,7 +86,6 @@ const CreateForum = () => {
             <br/>
                 <button className="submit btn btn-primary btn-lg btn-block" type="submit">Create</button>
                 
-                </div>
                 
             </form>
           

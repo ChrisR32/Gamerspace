@@ -16,6 +16,21 @@ body {
         padding-top: 120px;
     
     }
+
+    .total-border {
+        border: 1px solid black;
+        background-color: white;
+        box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+        font-size: 16px;
+    }
+
+    .total-heading {
+        border: 1px solid transparent;
+
+        font-size: 16px;
+        font-weight: 800;
+        text-align: right;
+    }
     
     .top-div h1 {
         text-align: center;    
@@ -55,6 +70,10 @@ body {
     .forum {
     width: 60%;
     margin: auto;
+    }
+
+    .form-group {
+        width: 100%;
     }
     
     .main-content {
@@ -128,4 +147,20 @@ display: block;
 
 .center-content {
     text-align: center;
+}
+
+.border-right {
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.recent-post {
+    width: 70px;
+}
+
+.min-line-height {
+    line-height: 0px;
+}
+
+.bottom-border {
+
 }

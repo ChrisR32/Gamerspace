@@ -7,6 +7,11 @@ import Footer from "./Components/footer";
 import './scss/app.scss';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+import JavascriptTimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+
+ 
+
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
@@ -19,6 +24,13 @@ import ShowForum from "./Pages/Forum/ShowForum";
 import CreateThread from "./Pages/Thread/CreateThread";
 import ShowThread from "./Pages/Thread/ShowThread";
 import CreatePost from "./Pages/Thread/CreatePost";
+import ContactUs from "./Pages/ContactUs";
+import Rules from "./Pages/Rules";
+import News from "./Pages/News";
+import About from "./Pages/AboutUs";
+
+
+JavascriptTimeAgo.addLocale(en)
 
 function App() {
   const [user, setUser] = useState(null);
@@ -82,6 +94,18 @@ function App() {
                 </Route>
                 <Route path="/post/create/:id">
                   {user ? <CreatePost/> : <Redirect to="/auth/login"/>}
+                </Route>
+                <Route path="/contact">
+                <ContactUs/>
+                </Route>
+                <Route path="/rules">
+                <Rules/>
+                </Route>
+                <Route path="/news">
+                <News/>
+                </Route>
+                <Route path="/about">
+                <About/>
                 </Route>
               </Switch>
               <Footer />
