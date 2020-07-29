@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import validator from "validator";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 import AuthContext from "../../Contexts/AuthContext";
 import "./Auth.scss";
 import "./Auth.css";
@@ -11,10 +12,12 @@ export default function Register() {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [avatar, setAvatar] = useState("");
     const [emailError, setEmailError] = useState(null);
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState(null);
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const history = useHistory();
 
     const handleOnSubmit = async event => {
         event.preventDefault();
@@ -38,11 +41,13 @@ export default function Register() {
         const data = {
             name,
             email,
-            password
+            password,
+            avatar
         };
 
         try {
             await axios.post("/api/auth/register", data);
+            history.push('/auth/login');
         } catch (e) {
             const message = e.response.data.message;
             if (message === "email_exists") {
@@ -61,6 +66,14 @@ export default function Register() {
                                 itemID="name-input"
                                 value={name}
                                 onChange={e => setName(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label for="name-input">Avatar URL</label>
+                            <input className="form-control form-control-lg"
+                                itemID="avatar-input"
+                                value={avatar}
+                                onChange={e => setAvatar(e.target.value)}
                             />
                         </div>
                     <div className="form-group">
