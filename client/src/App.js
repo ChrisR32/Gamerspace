@@ -26,6 +26,7 @@ import ShowThread from "./Pages/Thread/ShowThread";
 import CreatePost from "./Pages/Thread/CreatePost";
 import ContactUs from "./Pages/ContactUs";
 import Rules from "./Pages/Rules";
+import News from "./Pages/News";
 
 
 JavascriptTimeAgo.addLocale(en)
@@ -98,6 +99,9 @@ function App() {
                 </Route>
                 <Route path="/rules">
                 <Rules/>
+                </Route>
+                <Route path="/news">
+                <News/>
                 </Route>
               </Switch>
               <Footer />

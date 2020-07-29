@@ -26,6 +26,7 @@ app.use('/api/category', require("./controllers/Category"));
 app.use('/api/forum', require("./controllers/Forum"));
 app.use('/api/thread', require("./controllers/Thread"));
 app.use('/api/post', require("./controllers/Post"));
+app.use('/api/news', require("./controllers/News"));
 
 app.get('/toppost', function topPosts(req, res) {
     let topPost = db.collection('threads').findOne(
