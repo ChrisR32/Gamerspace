@@ -1,14 +1,11 @@
-import React, { Component, useState } from 'react'
+import React, { Component, Fragment } from 'react';
 import {useHistory} from "react-router-dom";
-import axios from "axios";
-import name from "./Auth/Register";
 import 'bootstrap';
 
 class Profile extends Component {
     render() {
         const history = useHistory();
-        const [content, setContent] = useState("");
-        const location = 'Australia';
+        const { avatar, username } = this.props
         const handleImageUpload = e => {
           const [file] = e.target.files;
           if (file) {
@@ -18,31 +15,19 @@ class Profile extends Component {
 
         return (
         <div>
+          {/* <Fragment>
+            <UserAvatar src={avatar} />
+            <UserProfile username={username} />
+          </Fragment> */}
         
-        <div className="user-name">
-          <h2>User name: {name}</h2>
-        </div>
-        
-        <div className="About-Me">
-          <label for="content-input">About Me</label>
-             <textarea placeholder="Content"
-                      rows="5"
-                      cols="40"
-                      itemId="content-input"
-                      value={content}
-                      style={{width: "100%", height: 250}}
-                      onChange={e => setContent(e.target.value)}>
-             </textarea>
-        </div>
-        
-        <div>
-          <div className="Profile">
+      
+        <div className="avatar">
             <input type="file" accept="image/*" onChange={handleImageUpload} multiple = "false" />
               <div
                 style={{
                   height: "60px",
                   width: "60px",
-                  border: "1px dashed black"
+                  border: "1px solid black"
                 }}
               >
 
@@ -54,13 +39,10 @@ class Profile extends Component {
               }}
             />
             </div>
-
-          </div>      
-        </div>    
-      </div>
-
-        )
+          </div>
+          </div>
+          )     
+        };
       }
-    }
 
 export default Profile;

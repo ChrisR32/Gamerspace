@@ -33,8 +33,9 @@ function App() {
 
   const init = async () => {
     const token = localStorage.getItem("token");
-    const response = await axios.get('/api/auth/init', {params: {token}});
+    const response = await axios.get('http://localhost:5005/api/auth/init', {params: {token}});
     const {user} = response.data;
+    console.log (user)
     setUser(user);
     setIsInitiated(true);
   };
@@ -43,7 +44,7 @@ function App() {
     setUser(null);
     localStorage.setItem("token", null);
   };
-
+  
   return (
     <div>
       {isInitiated && (
