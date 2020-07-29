@@ -17,7 +17,7 @@ export default function Footer() {
 
         
             <div class="col-12 col-md mb-1 mb-md-0">
-                <a href="#" target="_blank" class="text-uppercase strong">FORUM RULES</a>
+                <a href="/rules" target="_blank" class="text-uppercase strong">FORUM RULES</a>
             </div>
 
         

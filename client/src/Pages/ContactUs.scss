@@ -1,15 +1,15 @@
-.main-content {
+.contact-content {
     width: 90%;
     margin: auto;
 }
 
-.main-content h4 {
+.contact-content h4 {
     text-align: center;
     margin-bottom: 40px;
     margin-top: -40px;
 }
 
-.main-content h1 {
+.contact-content h1 {
     padding-bottom: 0px;
 }
 
@@ -17,7 +17,7 @@ br {
 line-height: 1px;
 }
 
-.view {
+.contact-view {
     display: row;
     margin: auto;
     vertical-align: middle;
@@ -44,12 +44,9 @@ line-height:24px;
 margin-bottom:38.9425px;
 }
 
-.cat-container {
-    display: row;
-    width: max-content;
-}
 
-input {
+
+.contact-view input {
     margin-top: 0px;
     margin-bottom: 30px;
     box-sizing: border-box;
@@ -65,7 +62,7 @@ padding: 5px;
 border-radius: 5px;
 }
 
-textarea {
+.contact-view textarea {
     margin-bottom: 40px;
     box-sizing: border-box;
     border: 3px solid rgb(255, 192, 74);
@@ -80,15 +77,15 @@ padding: 5px;
 border-radius: 5px;
 }
 
-input:focus {
+.contact-view input:focus {
     border: 3px solid rgb(255, 165, 30);
   }
 
-textarea:focus {
+.contact-view textarea:focus {
     border: 3px solid rgb(255, 165, 30);
   }
 
-.view a {
+.contact-view a {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -102,7 +99,7 @@ textarea:focus {
     margin-top: 30px;
 }
 
-.view a:hover {
+.contact-view a:hover {
     text-decoration: none;
 color: rgb(255, 165, 30);
 border: 3px solid rgb(255, 165, 30);

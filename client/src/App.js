@@ -25,6 +25,8 @@ import CreateThread from "./Pages/Thread/CreateThread";
 import ShowThread from "./Pages/Thread/ShowThread";
 import CreatePost from "./Pages/Thread/CreatePost";
 import ContactUs from "./Pages/ContactUs";
+import Rules from "./Pages/Rules";
+
 
 JavascriptTimeAgo.addLocale(en)
 
@@ -93,6 +95,9 @@ function App() {
                 </Route>
                 <Route path="/contact">
                 <ContactUs/>
+                </Route>
+                <Route path="/rules">
+                <Rules/>
                 </Route>
               </Switch>
               <Footer />
