@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@aws-amplify/cli": "^4.26.0",
+    "aws-amplify": "^3.0.22",
+    "aws-amplify-react": "^4.1.21",
     "aws-sdk": "^2.721.0",
     "bcryptjs": "^2.4.3",
     "binary-extensions": "^2.1.0",
