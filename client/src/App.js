@@ -44,14 +44,8 @@ function App() {
 
   const init = async () => {
     const token = localStorage.getItem("token");
-<<<<<<< HEAD
-    const response = await axios.get('http://localhost:5005/api/auth/init', {params: {token}});
-    const {user} = response.data;
-    console.log (user)
-=======
     const response = await axios.get("/api/auth/init", { params: { token } });
     const { user } = response.data;
->>>>>>> b4c9c6ee97cacf250e333d61c80caad726d2e8f1
     setUser(user);
     setIsInitiated(true);
   };
@@ -64,52 +58,6 @@ function App() {
   return (
     <div>
       {isInitiated && (
-<<<<<<< HEAD
-          <AuthContext.Provider value={{user, setUser, handleLogout}}>
-            <Router>
-              <Navbar />
-              <Switch>
-                <Route path="/" exact>
-                  <Home/>
-                </Route>
-                <Route path="/auth/login">
-                  {!user ? <Login/> : <Redirect to="/"/>}
-                </Route>
-                <Route path="/auth/register">
-                  {!user ? <Register/> : <Redirect to="/"/>}
-                </Route>
-                <Route path="/category/create">
-                  {user ? <CreateCategory/> : <Redirect to="/auth/login"/>}
-                </Route>
-                <Route path="/category/:id">
-                  <ShowCategory/>
-                </Route>
-                <Route path="/category">
-                  <BrowseCategories/>
-                </Route>
-                <Route path="/forum/create/:id">
-                  {user ? <CreateForum/> : <Redirect to="/auth/login"/>}
-                </Route>
-                <Route path="/forum/:id">
-                <ShowForum/>
-                </Route>
-                <Route path="/thread/create/:id">
-                  {user ? <CreateThread/> : <Redirect to="/auth/login"/>}
-                </Route>
-                <Route path="/thread/:id">
-                  <ShowThread/>
-                </Route>
-                <Route path="/post/create/:id">
-                  {user ? <CreatePost/> : <Redirect to="/auth/login"/>}
-                </Route>
-                <Route path='/pages/profile'>
-                  {!user ? <Profile />:<Redirect to="/Profile"/>}
-                </Route>
-              </Switch>
-              <Footer />
-            </Router>
-          </AuthContext.Provider>
-=======
         <AuthContext.Provider value={{ user, setUser, handleLogout }}>
           <Router>
             <Navbar />
@@ -163,7 +111,6 @@ function App() {
             <Footer />
           </Router>
         </AuthContext.Provider>
->>>>>>> b4c9c6ee97cacf250e333d61c80caad726d2e8f1
       )}
     </div>
   );

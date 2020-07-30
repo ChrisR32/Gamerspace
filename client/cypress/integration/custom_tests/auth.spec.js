@@ -12,7 +12,7 @@ context('Auth', () => {
 
     it('when contact is clicked directed to the contact page', () => {
         cy.contains('Contact').click()
-        cy.url().should('eq', 'http://localhost:3000/contact/')
+        cy.url().should('eq', 'http://localhost:3000/contact')
     })
 
     it('when home is clicked directed to the home page', () => {

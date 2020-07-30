@@ -36,6 +36,7 @@
     "react-summernote": "^2.0.2",
     "react-time-ago": "^6.0.0",
     "sass-loader": "^9.0.2",
+    "scandir": "^0.1.2",
     "storybook": "^5.3.19",
     "style-loader": "^1.2.1",
     "tinymce": "^5.4.1",
