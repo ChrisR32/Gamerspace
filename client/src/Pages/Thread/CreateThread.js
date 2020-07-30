@@ -27,7 +27,9 @@ const CreateForum = () => {
 
     const response = await axios.post("/api/thread/create", data);
     const { _id } = response.data;
-    history.push("/thread/" + _id);
+    // history.push("/thread/" + _id);
+    // window.location.reload(true)
+
   };
 
   return (

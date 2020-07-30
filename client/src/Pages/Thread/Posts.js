@@ -31,7 +31,14 @@ export default function ShowThread() {
   const handleDelete = (id) => {
     axios.delete(`/api/post/thread/`, {
       params: { id },
-    });
+    })
+    .then(() =>{
+      console.log("here")
+      setPosts(replys.filter(reply => reply._id !== id))
+    }) 
+    .catch(() => {
+      console.log("Errored")
+    })
   };
 
   return (

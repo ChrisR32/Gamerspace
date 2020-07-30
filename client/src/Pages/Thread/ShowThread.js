@@ -50,10 +50,19 @@ export default function ShowThread() {
 
   const history = useHistory();
 
-  const handleDelete = (id) => {
+  const handleDelete =  (id) => {
+    console.log("in handle delete")
     axios.delete(`/api/thread/forum/`, {
       params: { id },
-    });
+    })
+    .then(() =>{
+      console.log("here")
+      setPosts(posts.filter(post => post.id !== id))
+    }) 
+    .catch(() => {
+      console.log("Errored")
+    })
+
   };
 
   return (

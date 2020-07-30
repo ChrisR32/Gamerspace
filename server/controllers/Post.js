@@ -23,6 +23,7 @@ router.post("/create", async (req, res) => {
   });
 
   await newPost.save();
+  res.send(newPost);
 });
 
 router.get("/:id", async (req, res) => {
