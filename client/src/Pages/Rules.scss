@@ -1,87 +1,84 @@
 .rules-content {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
 .rules-content h4 {
-    text-align: center;
-    font-weight: bolder;
+  text-align: center;
+  font-weight: bolder;
 }
 
 .rules-content h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: bolder;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bolder;
 }
 
 .rules-content h1 {
-    padding-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 br {
-line-height: 1px;
+  line-height: 1px;
 }
 
 .rules-view {
-    display: row;
-    margin: auto;
-    width: 90%;
-    vertical-align: middle;
-    // border-color: inherit;
-    color: #212529;
-    text-align: left;
-    // border-spacing: 2px;
-    // border: 1px solid black;
-    // padding: 1rem !important;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: center;
-    // background-color:white;
-// border-bottom-left-radius:5px;
-// border-bottom-right-radius:5px;
+  display: row;
+  margin: auto;
+  width: 90%;
+  vertical-align: middle;
+  // border-color: inherit;
+  color: #212529;
+  text-align: left;
+  // border-spacing: 2px;
+  // border: 1px solid black;
+  // padding: 1rem !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  // background-color:white;
+  // border-bottom-left-radius:5px;
+  // border-bottom-right-radius:5px;
 
-// box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+  // box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 
-color:rgb(20, 20, 20);
+  color: rgb(20, 20, 20);
 
-
-line-height:24px;
-margin-bottom:38.9425px;
+  line-height: 24px;
+  margin-bottom: 38.9425px;
 }
 
 .rules-view ul {
-    overflow: auto;
-    display: inline;
-
+  overflow: auto;
+  display: inline;
 }
 
 .rules-view ul li {
-    text-align: left;
-    width: 100%;
-    padding-top: 10px;
+  text-align: left;
+  width: 100%;
+  padding-top: 10px;
 }
 
 .rules-view ul li:last-child {
-padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .rules-view a {
-    font-size: 1.5rem;
-    color: rgb(255, 165, 30);
-    font-weight: bolder;
+  font-size: 1.5rem;
+  color: rgb(255, 165, 30);
+  font-weight: bolder;
 }
 
 .rules-view a:hover {
-    text-decoration: underline;
-
+  text-decoration: underline;
 }
 
 .history-img {
-    width: 100%;
+  width: 100%;
 }
 
 .tiny-text {
-    font-size: 14px;
-    text-align: center;
+  font-size: 14px;
+  text-align: center;
 }

@@ -1,74 +1,83 @@
 body {
-    color: white;
+  color: white;
 }
 
 .main-footer {
-    padding-top: 3em;
-    background-color: rgb(33, 37, 41);
+  padding-top: 3em;
+  background-color: rgb(33, 37, 41);
 }
 
 .lower-footer {
-    background-color: black;
+  background-color: black;
 }
 
 .text-white {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 a {
-    color: white;
+  color: white;
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
 }
 
 .text-uppercase {
-    color: white;
+  color: white;
 }
 
 a i {
-    color: white;
+  color: white;
 }
 
 .col-12 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .lower-footer a {
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .lower-footer a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .col-12 {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;   
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .footer-logo {
-    width: 80px;
+  width: 80px;
 }
 
 .footer-name {
-    height: 55px;
+  height: 55px;
 }
 
 .logo {
-    background-color: transparent;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+  background-color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .logo a:hover {
-    background-color: rgb(253, 120, 32);
+  background-color: rgb(253, 120, 32);
 }
 
 .main-footer {
-    height: 80%;
+  height: 80%;
 }

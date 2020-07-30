@@ -1,177 +1,175 @@
 .main-content-form {
-    width: 75%;
-    margin: auto;
+  width: 75%;
+  margin: auto;
 }
 
 br {
-line-height: 1px;
+  line-height: 1px;
 }
 
 .cat-right {
-    display: row;
-    vertical-align: middle;
-    border-color: inherit;
-    color: #212529;
-    text-align: start;
-    border-spacing: 2px;
-    border: 1px solid black;
-    border-top: none;
-    padding: 1rem !important;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color:white;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
+  display: row;
+  vertical-align: middle;
+  border-color: inherit;
+  color: #212529;
+  text-align: start;
+  border-spacing: 2px;
+  border: 1px solid black;
+  border-top: none;
+  padding: 1rem !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 
-box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 
-color:rgb(20, 20, 20);
-font-size:16px;
-font-weight:400;
+  color: rgb(20, 20, 20);
+  font-size: 16px;
+  font-weight: 400;
 
-line-height:24px;
-margin-bottom:38.9425px;
+  line-height: 24px;
+  margin-bottom: 38.9425px;
 }
 
 .cat-left {
-    display: row;
-    vertical-align: middle;
-    border-color: inherit;
-    color: #212529;
-    text-align: start;
-    border-spacing: 2px;
-    border: 1px solid black;
-    border-top: none;
-    padding: 1rem !important;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color:white;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
+  display: row;
+  vertical-align: middle;
+  border-color: inherit;
+  color: #212529;
+  text-align: start;
+  border-spacing: 2px;
+  border: 1px solid black;
+  border-top: none;
+  padding: 1rem !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 
-box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 
-color:rgb(20, 20, 20);
-font-size:16px;
-font-weight:400;
+  color: rgb(20, 20, 20);
+  font-size: 16px;
+  font-weight: 400;
 
-line-height:24px;
-margin-bottom:38.9425px;
+  line-height: 24px;
+  margin-bottom: 38.9425px;
 }
 
 .cat-container {
-    display: row;
-    width: max-content;
+  display: row;
+  width: max-content;
 }
 
 .cat-heading {
-    width: 100%;
-    color: black;
-    font-size: 20px;
-    font-weight: 500;
+  width: 100%;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .cat-find {
-cursor:pointer;
-padding-top: 14px;
-padding-bottom: 2px;
-border-bottom: 1px solid rgb(179, 179, 179);
-margin-left: 4px;
-margin-right: 4px;
+  cursor: pointer;
+  padding-top: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgb(179, 179, 179);
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .cat-find:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .cat-find:hover h5 {
-    color: rgb(253, 120, 32);
+  color: rgb(253, 120, 32);
 }
 
-
 .top-div h1 {
-    text-align: center;    
-    padding-bottom: 40px;
-    font-size: 64px;
-    font-family: 'Raleway', sans-serif;
-    color: rgb(253, 120, 32);
-    font-size: calc(56rem/16);
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    padding-top: 16px;
+  text-align: center;
+  padding-bottom: 40px;
+  font-size: 64px;
+  font-family: "Raleway", sans-serif;
+  color: rgb(253, 120, 32);
+  font-size: calc(56rem / 16);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding-top: 16px;
 }
 
 ul {
-    width: max-content;
+  width: max-content;
 }
 
 li {
-    width: 100%;
+  width: 100%;
 }
 
 .login-bottom {
-    padding-bottom: 3rem; 
+  padding-bottom: 3rem;
 }
 
 .cat-logo {
-  width: 100%; 
+  width: 100%;
 }
 
 .center-inside {
-    text-align: center;
+  text-align: center;
 }
 
 .user-logo {
-    width: 100%;
+  width: 100%;
 }
 
 .top-cat {
-    text-align: left;
-    background-color: black;
-    height: 50px;
-    border: 1px solid black;
-    border-bottom: 3px;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    box-shadow:rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
+  text-align: left;
+  background-color: black;
+  height: 50px;
+  border: 1px solid black;
+  border-bottom: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 }
 
 .top-cat h4 {
-    padding-top: 13px;
-    color: white;
+  padding-top: 13px;
+  color: white;
 }
 
 .home-logo {
-    height: 20px;
-    display: inline;
-    margin-bottom: 6px;
+  height: 20px;
+  display: inline;
+  margin-bottom: 6px;
 }
 
 .top-row {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .mini-text {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .delete {
-    background-color: red;
-    color: white;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    border: 1px solid black;
-    font-weight: bolder;
+  background-color: red;
+  color: white;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 1px solid black;
+  font-weight: bolder;
 }
 
 .delete:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .adminOnly {
-  
 }
