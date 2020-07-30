@@ -86,7 +86,7 @@ function App() {
                   {user ? <CreatePost/> : <Redirect to="/auth/login"/>}
                 </Route>
                 <Route path='/pages/profile'>
-                  {!user ? <Profile />:<Redirect to="/"/>}
+                  {!user ? <Profile />:<Redirect to="/Profile"/>}
                 </Route>
               </Switch>
               <Footer />
