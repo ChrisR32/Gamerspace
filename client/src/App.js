@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import AuthContext from "./Contexts/AuthContext";
-import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footer";
-import './scss/app.scss';
-import PropTypes from 'prop-types';
-import $ from 'jquery';
+import "./scss/app.scss";
+import PropTypes from "prop-types";
+import $ from "jquery";
+import JavascriptTimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
@@ -20,6 +27,12 @@ import CreateThread from "./Pages/Thread/CreateThread";
 import ShowThread from "./Pages/Thread/ShowThread";
 import Profile from "./Pages/Profile";
 import CreatePost from "./Pages/Thread/CreatePost";
+import ContactUs from "./Pages/ContactUs";
+import Rules from "./Pages/Rules";
+import News from "./Pages/News";
+import About from "./Pages/AboutUs";
+
+JavascriptTimeAgo.addLocale(en);
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,13 +42,16 @@ function App() {
     init();
   }, []);
 
-
-
   const init = async () => {
     const token = localStorage.getItem("token");
+<<<<<<< HEAD
     const response = await axios.get('http://localhost:5005/api/auth/init', {params: {token}});
     const {user} = response.data;
     console.log (user)
+=======
+    const response = await axios.get("/api/auth/init", { params: { token } });
+    const { user } = response.data;
+>>>>>>> b4c9c6ee97cacf250e333d61c80caad726d2e8f1
     setUser(user);
     setIsInitiated(true);
   };
@@ -48,6 +64,7 @@ function App() {
   return (
     <div>
       {isInitiated && (
+<<<<<<< HEAD
           <AuthContext.Provider value={{user, setUser, handleLogout}}>
             <Router>
               <Navbar />
@@ -92,6 +109,61 @@ function App() {
               <Footer />
             </Router>
           </AuthContext.Provider>
+=======
+        <AuthContext.Provider value={{ user, setUser, handleLogout }}>
+          <Router>
+            <Navbar />
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/auth/login">
+                {!user ? <Login /> : <Redirect to="/" />}
+              </Route>
+              <Route path="/auth/register">
+                {!user ? <Register /> : <Redirect to="/" />}
+              </Route>
+              <Route path="/category/create">
+                {user ? <CreateCategory /> : <Redirect to="/auth/login" />}
+              </Route>
+              <Route path="/category/:id">
+                <ShowCategory />
+              </Route>
+              <Route path="/category">
+                <BrowseCategories />
+              </Route>
+              <Route path="/forum/create/:id">
+                {user ? <CreateForum /> : <Redirect to="/auth/login" />}
+              </Route>
+              <Route path="/forum/:id">
+                <ShowForum />
+              </Route>
+              <Route path="/thread/create/:id">
+                {user ? <CreateThread /> : <Redirect to="/auth/login" />}
+              </Route>
+              <Route path="/thread/:id">
+                <ShowThread />
+              </Route>
+              <Route path="/post/create/:id">
+                {user ? <CreatePost /> : <Redirect to="/auth/login" />}
+              </Route>
+              <Route path="/contact">
+                <ContactUs />
+              </Route>
+              <Route path="/rules">
+                <Rules />
+              </Route>
+              <Route path="/news">
+                <News />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+            </Switch>
+            <Footer />
+          </Router>
+        </AuthContext.Provider>
+>>>>>>> b4c9c6ee97cacf250e333d61c80caad726d2e8f1
       )}
     </div>
   );
