@@ -3,8 +3,6 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./CreateForms.scss";
 import "bootstrap";
-import Uploader from "../../Components/Uploader";
-import DisplayImage from "../../Components/DisplayImage";
 
 const CreateCategory = () => {
   const history = useHistory();

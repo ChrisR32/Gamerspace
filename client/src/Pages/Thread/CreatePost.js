@@ -9,12 +9,13 @@ import "bootstrap";
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
+  // eslint-disable-next-line 
   const history = useHistory();
   const [content, setPost] = useState("");
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-
+    console.log("Hererere")
     const data = {
       content,
       userId: user._id,
@@ -23,14 +24,17 @@ const CreatePost = () => {
       userAvatar: user.avatar,
     };
     const response = await axios.post("/api/post/create", data);
+    // eslint-disable-next-line 
     const { _id } = response.data;
-    history.push("/thread/" + id);
+    console.log("Rerloadiing")
+    window.location.reload(true)
+    // history.push("/thread/" + id);
   };
 
   return (
     <div>
-      <form className="forum" onSubmit={handleOnSubmit}>
-        <div className="form-group">
+      <div className="forum-new">
+        <div className="form-group forum-new">
           <label for="content-input">Reply to thread</label>
 
           <Editor
@@ -59,11 +63,12 @@ const CreatePost = () => {
           <button
             className="submit btn btn-primary btn-lg btn-block"
             type="submit"
+            onClick={handleOnSubmit}
           >
             Reply
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

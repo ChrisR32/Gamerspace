@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./Home.scss";
@@ -27,7 +27,7 @@ export default function Home() {
               className="home-border"
             >
               <div>
-                <img src={SlideOne} />
+                <img src={SlideOne} alt="" />
                 <p className="home-info">
                   Login{" "}
                   <a href="/auth/login" class="strong home-slide">
@@ -40,7 +40,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <img src={SlideTwo} />
+                <img src={SlideTwo} alt="" />
                 <p className="home-info">
                   Connect with us{" "}
                   <a href="/contact" class="strong home-slide">
@@ -49,7 +49,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <img src={SlideThree} />
+                <img src={SlideThree} alt="" />
                 <p className="home-info">
                   Stay informed{" "}
                   <a href="/rules" class="strong home-slide">
@@ -58,7 +58,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <img src={SlideFour} />
+                <img src={SlideFour} alt="" />
                 <p className="home-info">
                   Get rewarded{" "}
                   <a href="/news" class="strong home-slide">
@@ -67,7 +67,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <img src={SlideFive} />
+                <img src={SlideFive} alt="" />
                 <p className="home-info">
                   Start browsing{" "}
                   <a href="/category" class="strong home-slide">
@@ -76,7 +76,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <img src={SlideSix} />
+                <img src={SlideSix} alt="" />
                 <p className="home-info">
                   Discover exclusive content{" "}
                   <a href="/news" class="strong home-slide">

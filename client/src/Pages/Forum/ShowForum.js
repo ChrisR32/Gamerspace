@@ -2,12 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import "../Category/BrowseCategories.scss";
-import CatLogo from "../../Images/cat-icon.png";
-import HomeLogo from "../../Images/home-icon.png";
 import "bootstrap";
 import ForumLink from "../../Components/navigator/forumLink.js";
-import ShowTopPostThread from "../../Components/TopPosts.js";
-import ShowTopReplyThread from "../../Components/TopReplys.js";
 import ShowTotals from "../../Components/Totals.js";
 
 export default function ShowForum() {
@@ -29,6 +25,7 @@ export default function ShowForum() {
     };
     getForum();
     getThreads();
+    // eslint-disable-next-line
   }, []);
 
   const handleDelete = (id) => {
@@ -63,7 +60,6 @@ export default function ShowForum() {
               <div
                 key={index}
                 className="row cat-find"
-                key={index}
                 button
                 onClick={() => history.push(`/thread/${thread._id}`)}
               >
@@ -82,7 +78,6 @@ export default function ShowForum() {
                   <p>Thread created at: {thread.createdAt}</p>
                 </div>
                 <div class="col-lg-2 text-center">
-                  <h4></h4>
                   <div
                     key={index}
                     className="delete"

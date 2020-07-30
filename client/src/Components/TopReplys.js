@@ -1,14 +1,18 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import "../Pages/Category/CreateForms.scss";
 import "bootstrap";
 
 export default function ShowTopReplyThread() {
+  // eslint-disable-next-line
   const history = useHistory();
+  // eslint-disable-next-line
   const { id } = useParams();
+  // eslint-disable-next-line
   const [thread, setThread] = useState(null);
   const [reply, setReply] = useState([]);
+  // eslint-disable-next-line
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -29,7 +33,7 @@ export default function ShowTopReplyThread() {
               <img
                 src={reply.userAvatar}
                 className="recent-post"
-                alt="User Profile Picture"
+                alt="User Profile"
               />
             </p>
           )}

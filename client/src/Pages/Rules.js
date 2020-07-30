@@ -141,6 +141,7 @@ export default function Home() {
               , or you may contact Gamerspace directly via Email at{" "}
               <a
                 href="mailto:forum_support@gamerspace.online"
+                rel="noopener noreferrer"
                 target="_blank"
                 class="strong"
               >

@@ -2,16 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../../Contexts/AuthContext";
-import HomeLogo from "../../Images/home-icon.png";
 import "../Category/CreateForms.scss";
 import "bootstrap";
 import PostView from "./Posts";
-import PostCreate from "./CreatePost";
 import CreatePost from "./CreatePost";
 import ForumLink from "../../Components/navigator/forumLink.js";
 import parse from "html-react-parser";
-import ShowTopPostThread from "../../Components/TopPosts.js";
-import ShowTopReplyThread from "../../Components/TopReplys.js";
 import ShowTotals from "../../Components/Totals.js";
 
 export default function ShowThread() {
@@ -19,9 +15,13 @@ export default function ShowThread() {
   const { user } = useContext(AuthContext);
   const [thread, setThread] = useState(null);
   const [posts, setPosts] = useState([]);
+  // eslint-disable-next-line
   const [page, setPage] = useState(1);
+  // eslint-disable-next-line
   const [hasMore, setHasMore] = useState(false);
+  // eslint-disable-next-line
   const [isReplying, setIsReplying] = useState(false);
+  // eslint-disable-next-line
   const [replyContent, setReplyContent] = useState("");
   const { id } = useParams();
   useEffect(() => {
@@ -31,8 +31,9 @@ export default function ShowThread() {
       history.push("/thread/" + id);
     };
     getThread();
+    // eslint-disable-next-line
   }, []);
-
+  // eslint-disable-next-line
   const handleReply = async (event) => {
     event.preventDefault();
     if (!replyContent) return;
@@ -50,10 +51,19 @@ export default function ShowThread() {
 
   const history = useHistory();
 
-  const handleDelete = (id) => {
+  const handleDelete =  (id) => {
+    console.log("in handle delete")
     axios.delete(`/api/thread/forum/`, {
       params: { id },
-    });
+    })
+    .then(() =>{
+      console.log("here")
+      setPosts(posts.filter(post => post.id !== id))
+    }) 
+    .catch(() => {
+      console.log("Errored")
+    })
+
   };
 
   return (
@@ -85,7 +95,7 @@ export default function ShowThread() {
                     <img
                       src={thread.threadAvatar}
                       className="avatar"
-                      alt="User Profile Picture"
+                      alt="User Profile"
                     />
                   </p>
                 )}

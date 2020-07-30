@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import "../Pages/Category/CreateForms.scss";
 import "bootstrap";
-import ReactTimeAgo from "react-time-ago";
 
 export default function ShowTotals() {
+  // eslint-disable-next-line
   const history = useHistory();
+  // eslint-disable-next-line
   const { id } = useParams();
   const [thread, setThread] = useState(null);
   const [post, setPost] = useState(null);

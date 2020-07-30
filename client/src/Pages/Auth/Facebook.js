@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import FacebookLogin from "react-facebook-login";
 import { Image } from "bootstrap";
+// eslint-disable-next-line
 import validator from "validator";
 import axios from "axios";
 
 function Facebook() {
+  // eslint-disable-next-line
   const [login, setLogin] = useState(false);
+  // eslint-disable-next-line
   const [email, setEmail] = useState({});
   const [picture, setPicture] = useState("");
 
@@ -19,6 +22,7 @@ function Facebook() {
         email,
         picture,
       };
+      // eslint-disable-next-line
       const loginFacebook = async (event) => {
         event.preventDefault();
         await axios.post("/api/auth/register", data);

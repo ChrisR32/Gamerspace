@@ -10,8 +10,6 @@ import axios from "axios";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footer";
 import "./scss/app.scss";
-import PropTypes from "prop-types";
-import $ from "jquery";
 import JavascriptTimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 
@@ -70,6 +68,9 @@ function App() {
               </Route>
               <Route path="/auth/register">
                 {!user ? <Register /> : <Redirect to="/" />}
+              </Route>
+              <Route path="/Profile">
+                {user ? <Profile /> : <Redirect to="/Profile" />}
               </Route>
               <Route path="/category/create">
                 {user ? <CreateCategory /> : <Redirect to="/auth/login" />}
