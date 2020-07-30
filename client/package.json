@@ -18,6 +18,7 @@
     "bootstrap": "^4.5.0",
     "bootstrap-sass": "^3.4.1",
     "css-loader": "^3.6.0",
+    "dotenv-extended": "^2.8.0",
     "draft-js": "^0.11.6",
     "file-uploader": "^1.0.0",
     "fontawesome": "^5.6.3",
@@ -36,6 +37,7 @@
     "react-summernote": "^2.0.2",
     "react-time-ago": "^6.0.0",
     "sass-loader": "^9.0.2",
+    "scandir": "^0.1.2",
     "storybook": "^5.3.19",
     "style-loader": "^1.2.1",
     "tinymce": "^5.4.1",
@@ -63,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^4.11.0"
   }
 }

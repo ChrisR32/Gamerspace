@@ -23,6 +23,7 @@ import CreateForum from "./Pages/Forum/CreateForum";
 import ShowForum from "./Pages/Forum/ShowForum";
 import CreateThread from "./Pages/Thread/CreateThread";
 import ShowThread from "./Pages/Thread/ShowThread";
+import Profile from "./Pages/Profile";
 import CreatePost from "./Pages/Thread/CreatePost";
 import ContactUs from "./Pages/ContactUs";
 import Rules from "./Pages/Rules";
@@ -51,7 +52,7 @@ function App() {
     setUser(null);
     localStorage.setItem("token", null);
   };
-
+  
   return (
     <div>
       {isInitiated && (
@@ -67,6 +68,9 @@ function App() {
               </Route>
               <Route path="/auth/register">
                 {!user ? <Register /> : <Redirect to="/" />}
+              </Route>
+              <Route path="/Profile">
+                {user ? <Profile /> : <Redirect to="/Profile" />}
               </Route>
               <Route path="/category/create">
                 {user ? <CreateCategory /> : <Redirect to="/auth/login" />}
