@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import validator from "validator";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import AuthContext from "../../Contexts/AuthContext";
 import "./Auth.scss";
 import "./Auth.css";
 import "bootstrap";
-import Facebook from "./Facebook.js";
 
 export default function Register() {
   const [name, setName] = useState("");

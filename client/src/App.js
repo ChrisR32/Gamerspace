@@ -10,8 +10,6 @@ import axios from "axios";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/footer";
 import "./scss/app.scss";
-import PropTypes from "prop-types";
-import $ from "jquery";
 import JavascriptTimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 

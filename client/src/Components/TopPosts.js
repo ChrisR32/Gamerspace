@@ -1,17 +1,18 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import "../Pages/Category/CreateForms.scss";
 import "bootstrap";
-import ReactTimeAgo from "react-time-ago";
 
 export default function ShowTopPostThread() {
+  // eslint-disable-next-line
   const history = useHistory();
   const { id } = useParams();
+  // eslint-disable-next-line
   const [thread, setThread] = useState(null);
   const [post, setPost] = useState([]);
+  // eslint-disable-next-line
   const [user, setUser] = useState(null);
-
   useEffect(() => {
     const getPostThread = async () => {
       const response = await axios.get("/api/thread/" + id);
@@ -24,6 +25,7 @@ export default function ShowTopPostThread() {
     };
     getPostThread();
     getTopPost();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -35,7 +37,7 @@ export default function ShowTopPostThread() {
               <img
                 src={post.threadAvatar}
                 className="recent-post"
-                alt="User Profile Picture"
+                alt="User Profile"
               />
             </p>
           )}

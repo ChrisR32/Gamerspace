@@ -27,6 +27,7 @@ export default withRouter(({ history }) => {
     getCategory();
     getForum();
     getThread();
+    // eslint-disable-next-line
   }, []);
 
   return (

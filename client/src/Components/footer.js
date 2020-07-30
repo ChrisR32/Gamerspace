@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import FooterImg from "../Images/ducko.gif";
 import FooterLogo from "../Images/logo5.png";
 import "./footer.scss";
@@ -59,7 +59,7 @@ export default function Footer() {
         <div class="container mt-3 mt-md-5 py-3">
           <div class="row">
             <small class="col-12 col-md-12 text-center">
-              <a href="#">&copy; Copyright 2020</a> | website developed by{" "}
+              <a href="https://github.com/ChrisR32">&copy; Copyright 2020</a> | website developed by{" "}
               <a href="https://github.com/ChrisR32">Christopher Morris</a> and{" "}
               <a href="https://github.com/mmolloy88">Matthew Molloy</a>
             </small>

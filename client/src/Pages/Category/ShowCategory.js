@@ -2,13 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import "./BrowseCategories.scss";
-import CatLogo from "../../Images/cat-icon.png";
-import HomeLogo from "../../Images/home-icon.png";
 import "bootstrap";
 import ForumLink from "../../Components/navigator/forumLink.js";
-import PostLength from "../Thread/PostsRecent.js";
-import ShowTopPostThread from "../../Components/TopPosts.js";
-import ShowTopReplyThread from "../../Components/TopReplys.js";
 import ShowTotals from "../../Components/Totals.js";
 
 export default function BrowseCategories() {
@@ -31,6 +26,7 @@ export default function BrowseCategories() {
     };
     getCategory();
     getFora();
+    // eslint-disable-next-line
   }, []);
 
   const handleDelete = (id) => {
@@ -84,7 +80,6 @@ export default function BrowseCategories() {
                   </h5>
                 </div>
                 <div class="col-lg-2 text-center">
-                  <h4></h4>
                   <div
                     key={index}
                     className="delete"

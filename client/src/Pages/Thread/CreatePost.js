@@ -9,6 +9,7 @@ import "bootstrap";
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
+  // eslint-disable-next-line 
   const history = useHistory();
   const [content, setPost] = useState("");
 
@@ -23,6 +24,7 @@ const CreatePost = () => {
       userAvatar: user.avatar,
     };
     const response = await axios.post("/api/post/create", data);
+    // eslint-disable-next-line 
     const { _id } = response.data;
     console.log("Rerloadiing")
     window.location.reload(true)

@@ -7,15 +7,17 @@ import "bootstrap";
 
 export default function MenuAppBar() {
   const history = useHistory();
+  // eslint-disable-next-line 
   const { user, handleLogout } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  // eslint-disable-next-line 
   const open = Boolean(anchorEl);
 
   const logout = () => {
     handleClose();
     handleLogout();
   };
-
+// eslint-disable-next-line 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -78,6 +80,7 @@ export default function MenuAppBar() {
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      // eslint-disable-next-line
                       href="#"
                     >
                       Account

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import "../Category/CreateForms.scss";
@@ -10,6 +10,7 @@ export default function ShowThread() {
 
   const [thread, setThread] = useState(null);
   const [replys, setPosts] = useState([]);
+  // eslint-disable-next-line
   const [user, setUser] = useState(null);
   useEffect(() => {
     const getThread = async () => {
@@ -25,6 +26,7 @@ export default function ShowThread() {
     };
     getThread();
     getPosts();
+    // eslint-disable-next-line
   }, []);
   return (
     <div>
@@ -47,7 +49,7 @@ export default function ShowThread() {
                     <img
                       src={reply.userAvatar}
                       className="avatar"
-                      alt="User Profile Picture"
+                      alt="User Profile"
                     />
                   </p>
                   <p>

@@ -9,7 +9,9 @@ import { Editor } from "@tinymce/tinymce-react";
 const CreateForum = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
+  // eslint-disable-next-line 
   const { forum } = useHistory();
+  // eslint-disable-next-line 
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -26,6 +28,7 @@ const CreateForum = () => {
     };
 
     const response = await axios.post("/api/thread/create", data);
+    // eslint-disable-next-line 
     const { _id } = response.data;
     // history.push("/thread/" + _id);
     // window.location.reload(true)
