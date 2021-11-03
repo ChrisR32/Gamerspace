@@ -41,7 +41,7 @@
     "tinymce": "^5.4.1",
     "tinymce-aws-s3-upload-plugin": "^1.0.2",
     "typescript": "^3.9.7",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
