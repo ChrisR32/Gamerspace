@@ -2987,25 +2987,10 @@ aws-amplify@^3.0.22:
     "@aws-amplify/ui" "^2.0.2"
     "@aws-amplify/xr" "^2.1.21"
 
-aws-sdk@^2.608.0:
-  version "2.723.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.723.0.tgz#c9f5f21513ffade05c64b5ad64f6b9d7c39ab251"
-  integrity sha512-GmyMacu1x1BOA8tYZuZS1DKcdn7QQX+DJFdFgZ3IilMzlX3cdinMXkBc5onEnhbwHx657XHoPigJynTRGGNuWQ==
-  dependencies:
-    buffer "4.9.2"
-    events "1.1.1"
-    ieee754 "1.1.13"
-    jmespath "0.15.0"
-    querystring "0.2.0"
-    sax "1.2.1"
-    url "0.10.3"
-    uuid "3.3.2"
-    xml2js "0.4.19"
-
-aws-sdk@^2.721.0:
-  version "2.721.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.721.0.tgz#da9a66803e2a34da0f97d59c60933fa9e02eafe7"
-  integrity sha512-loljx8gp4u/Y4nKO2mbcj3df8HpMkoxTFCYx5800IkLj4Y6yZqodxPTt0SZ5fHlQNx8TUtjwkmp3isBGtdEdyA==
+aws-sdk@^2.608.0, aws-sdk@^2.721.0:
+  version "2.814.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.814.0.tgz#7a1c36006e0b5826f14bd2511b1d229ef6814bb0"
+  integrity sha512-empd1m/J/MAkL6d9OeRpmg9thobULu0wk4v8W3JToaxGi2TD7PIdvE6yliZKyOVAdJINhBWEBhxR4OUIHhcGbQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
